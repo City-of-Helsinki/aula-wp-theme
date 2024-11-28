@@ -1,0 +1,154 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Luuptek WP-Base\n"
+"POT-Creation-Date: 2020-10-27 11:07+0200\n"
+"PO-Revision-Date: 2020-11-30 09:17+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: sv_SE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.4.2\n"
+"X-Poedit-Basepath: ../..\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: functions.php:121
+msgid "Theme primary"
+msgstr ""
+
+#: functions.php:126
+msgid "Theme secondary"
+msgstr ""
+
+#: functions.php:131
+msgid "Solid black"
+msgstr ""
+
+#: functions.php:136
+msgid "Solid white"
+msgstr ""
+
+#: functions.php:172
+msgid "Latest from WP-quide"
+msgstr ""
+
+#: library/acf-blocks/blocks.php:25
+msgid "Hero"
+msgstr ""
+
+#: library/acf-options/options.php:6
+msgid "Theme Options"
+msgstr ""
+
+#: library/acf-options/options.php:8
+msgid "Update options"
+msgstr ""
+
+#: library/acf-options/options.php:9
+msgid "Options updated"
+msgstr ""
+
+#: library/classes/Bootstrap-navwalker.php:364
+msgid "Add a menu"
+msgstr ""
+
+#: library/classes/Initialization.php:401
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: library/classes/Initialization.php:440
+#, php-format
+msgid "Please make sure your <a href=\"%s\">.htaccess</a> file is writable "
+msgstr ""
+
+#: library/hooks/hooks.php:269
+msgid "Luuptek blocks"
+msgstr ""
+
+#: library/widgets/nav-menus.php:39
+msgid "Main menu"
+msgstr ""
+
+#: library/widgets/widgets.php:25
+msgid "Footer 1/2"
+msgstr ""
+
+#: library/widgets/widgets.php:32
+msgid "Footer 2/2"
+msgstr ""
+
+#: partials/components/main-nav.php:13 partials/components/main-nav.php:21
+#, php-format
+msgid "Hi %1$s! Today is %2$s and the time is"
+msgstr "Hej %1$s! Idag är %2$s och klockan är"
+
+#: partials/no-results-404.php:16
+msgid "Error 404: Page not found"
+msgstr ""
+
+#: partials/no-results-404.php:19
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: partials/no-results-search.php:15
+#, php-format
+msgid "No results found for %s"
+msgstr ""
+
+#: partials/no-results-search.php:19
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: partials/no-results.php:14
+msgid "Nothing found"
+msgstr ""
+
+#: partials/no-results.php:17
+msgid "It seems there's no content at this time. "
+msgstr ""
+
+#: templates/search.php:20
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: templates/searchform.php:13
+msgctxt "label"
+msgid "Search for:"
+msgstr ""
+
+#: templates/searchform.php:15
+msgid "Input search terms"
+msgstr ""
+
+#: templates/searchform.php:17
+msgctxt "submit button"
+msgid "Search"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+#. Description of the plugin/theme
+msgid "Oppijaportaali"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+#. Author URI of the plugin/theme
+msgid "https://luuptek.fi"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Luuptek"
+msgstr ""

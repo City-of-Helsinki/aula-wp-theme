@@ -1,0 +1,105 @@
+{
+    "key": "group_60d05be435b99",
+    "title": "Info ikkunoiden lisäasetukset",
+    "fields": [
+        {
+            "key": "field_60d06590b51a4",
+            "label": "Teksti",
+            "name": "text",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 3,
+            "new_lines": ""
+        },
+        {
+            "key": "field_60d065b1b51a5",
+            "label": "Linkki",
+            "name": "link",
+            "type": "link",
+            "instructions": "Jos asetat linkiksi youtube-videota, kopioi tähän youtubevideon url esim. https:\/\/www.youtube.com\/watch?v=VIDEON_ID",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
+            "key": "field_61e12ab2e8396",
+            "label": "Taustaväri",
+            "name": "bgcolor",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "orginal-yellow": "Vakio",
+                "red": "Punainen",
+                "yellow": "Keltainen",
+                "green": "Vihreä",
+                "blue": "Sininen",
+                "gray": "Harmaa"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_62f4af092e747",
+            "label": "Arkistoitumispäivä",
+            "name": "archive_date",
+            "type": "date_picker",
+            "instructions": "Tämän päivän jälkeen info ikkuna asetetaan luonnokseksi.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "d\/m\/Y",
+            "return_format": "Ymd",
+            "first_day": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "info-popups"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1660809185
+}

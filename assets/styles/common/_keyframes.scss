@@ -1,0 +1,89 @@
+@keyframes glow-effect {
+    0% {
+        opacity: 0;
+        background-position: 0 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    90% {
+        opacity: .8;
+    }
+    99% {
+        background-position: 600% 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes info-window-opener-animation-out {
+	from {
+		opacity: 1;
+		transform: scale(1);
+	}
+	to {
+		opacity: 0;
+		transform: scale(.8);
+		left: rem(-55px);
+	}
+}
+
+@keyframes info-window-opener-animation-in {
+	from {
+		opacity: 0;
+		transform: scale(.8);
+		left: rem(-55px);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+		left: rem(-15px);
+	}
+}
+
+@keyframes info-window-modal-animation-in {
+	from {
+		opacity: 0;
+		left: rem(-15px);
+	}
+	to {
+		opacity: 1;
+		left: rem(15px);
+	}
+}
+
+@keyframes info-window-modal-animation-out {
+	from {
+		opacity: 1;
+		left: rem(15px);
+	}
+	to {
+		opacity: 0;
+		left: rem(-15px);
+	}
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+
+@keyframes rotating {
+  from {
+	transform: rotate(0deg);
+  }
+
+  to {
+	transform: rotate(360deg);
+  }
+}

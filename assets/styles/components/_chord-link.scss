@@ -1,0 +1,21 @@
+
+
+.chord-link-wrapper {
+  position: fixed;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  z-index: 999;
+
+  @include media-breakpoint-down(sm) {
+	.chat-open & , .chat-closed & {
+	  display: none;
+	}
+  }
+}
+
+.chord-link {
+  &:hover {
+	animation: shake 0.5s;
+	animation-iteration-count: infinite;
+  }
+}

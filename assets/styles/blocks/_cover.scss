@@ -1,0 +1,27 @@
+/**
+ * Cover block styling
+ */
+
+.gutenberg {
+  .wp-block-cover {
+    &.alignfull {
+      margin-left: rem(-15px);
+      margin-right: rem(-15px);
+    }
+  }
+}
+
+.wp-block-cover {
+  width: auto;
+
+  .wp-block-cover__inner-container {
+    padding: rem(0 15px);
+    margin: 0 auto;
+
+    @each $name, $width in $container-max-widths {
+      @include media-breakpoint-up(#{$name}) {
+        max-width: $width;
+      }
+    }
+  }
+}

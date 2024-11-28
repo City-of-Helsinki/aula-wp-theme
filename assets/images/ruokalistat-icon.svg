@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>A8B30ED7-58DE-4C13-9474-FAF4CFD41EAF</title>
+    <defs>
+        <filter id="lunch-icon-filter">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.000000 0 0 0 0 0.000000 0 0 0 0 0.000000 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-270.000000, -624.000000)" filter="url(#lunch-icon-filter)">
+            <g transform="translate(270.000000, 624.000000)">
+                <path d="M10,4 L10,25 L12,25 L12,4 L14,4 L14,25 L16,25 L16,4 L18,4 L18,25 L20,25 L20,4 L22,4 L22.875,25 L23,25 L23,29 C23,30.6568542 21.6568542,32 20,32 L17,32 L17,44 L13,44 L13,32 L10,32 C8.34314575,32 7,30.6568542 7,29 L7,25 L7.16,25 L8,4 L10,4 Z M33,4 C36.8659932,4 40,11.1340068 40,15 L40,28 C40,32.418278 37.418278,36 33,36 L33,44 L29,44 L29,6 C29,4.8954305 29.8954305,4 31,4 L33,4 Z" fill="#FD4F00"></path>
+                <rect x="0" y="0" width="48" height="48"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

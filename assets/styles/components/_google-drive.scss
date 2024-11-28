@@ -1,0 +1,210 @@
+.google-drive-table-content {
+  overflow-x: auto;
+  max-width: (960px);
+  max-height: rem(4100px);
+  overflow-y: auto;
+
+  @include media-breakpoint-up(sm) {
+	max-height: rem(390px);
+  }
+}
+
+.google-drive-table {
+  width: 100%;
+  background-color: transparentize($hel-silver, 0.2);
+  font-size: rem(14px);
+
+  thead {
+	> tr {
+	  background-color: $hel-silver;
+	}
+  }
+
+  tbody {
+	td {
+	  font-weight: 600;
+
+	  &.icon-column {
+		width: rem(35px);
+	  }
+
+	  > svg {
+		width: rem(20px);
+		height: auto;
+	  }
+	}
+  }
+
+  th {
+	font-weight: 400;
+  }
+
+  th, td {
+	padding: rem(7px);
+  }
+
+  tr {
+	&:nth-of-type(even) {
+	  background-color: $hel-silver;
+	}
+  }
+
+  a {
+	color: #000;
+
+	@include hover-focus() {
+	  color: #000;
+	}
+  }
+
+  .table-column-align-right {
+	text-align: right;
+  }
+}
+
+.table-sorter-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  font-size: inherit;
+  line-height: 1;
+  background-color: transparent;
+  border: none;
+  color: #000;
+  padding: rem(7px 0 7px 7px);
+
+  @include hover-focus {
+
+  }
+
+  > svg {
+	width: rem(15px);
+	height: auto;
+	margin-left: rem(10px);
+  }
+}
+
+.sortable-options {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  min-width: rem(300px);
+  max-width: rem(300px);
+  display: none;
+  background-color: $hel-silver;
+
+  &[aria-hidden="false"] {
+	display: block;
+  }
+
+  &__item {
+	display: block;
+  }
+
+  &__link {
+	display: block;
+	padding: rem(10px 5px);
+	text-align: left;
+	color: #000;
+
+	@include hover-focus {
+	  background-color: #fff;
+	  color: #000;
+	  text-decoration: none;
+	}
+
+	&.sortable-options__link--active {
+	  background-color: #fff;
+	  color: #000;
+	}
+  }
+}
+
+.google-drive-buttons-wrapper {
+  position: relative;
+  padding: rem(15px);
+  background-color: transparentize($hel-silver, 0.2);
+}
+
+.google-drive-disconnect-wrapper {
+  position: relative;
+  padding: rem(5px 15px);
+  background-color: transparentize($hel-silver, 0.2);
+}
+
+.google-drive-new-document-opener {
+  display: inline-flex;
+  align-items: center;
+  background-color: $hel-silver;
+  color: #000;
+  padding: rem(8px 15px);
+  font-size: rem(16px);
+  font-weight: bold;
+  border: 1px solid #000;
+
+  > svg {
+	width: rem(25px);
+	height: auto;
+	margin-right: rem(15px);
+
+	path {
+	  fill: #000
+	}
+  }
+
+  @include hover-focus() {
+	background-color: lighten($hel-silver, 7.5%);
+	color: #000;
+	text-decoration: none;
+  }
+}
+
+.google-drive-new-document-options-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: calc(100% - 15px);
+  left: rem(15px);
+  max-width: rem(300px);
+  display: none;
+
+  &.google-drive-new-document-options-list--opened {
+	display: initial;
+  }
+
+
+  &__item {
+	display: block;
+	background-color: #FFF;
+	border: rem(1px) solid #000;
+
+	&:not(:first-child) {
+	  border-top: none;
+	}
+  }
+
+  &__link {
+	display: flex;
+	align-items: center;
+	font-size: rem(16px);
+	font-weight: 400;
+	padding: rem(10px 20px);
+	color: #000;
+	line-height: 1;
+
+	@include hover-focus() {
+	  color: $hel-copper;
+	  text-decoration: none;
+	}
+
+	> svg {
+	  width: rem(15px);
+	  height: auto;
+	  margin-right: rem(15px);
+	}
+  }
+}

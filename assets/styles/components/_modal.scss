@@ -1,0 +1,19 @@
+// Bootstrap overriding..
+
+.modal-body {
+  @include media-breakpoint-up(lg) {
+	padding: rem(16px 60px);
+  }
+  color: #FFF;
+}
+
+.modal-header {
+  .close {
+	background-color: transparent;
+	border: none;
+
+	svg {
+	  fill: #FFF;
+	}
+  }
+}

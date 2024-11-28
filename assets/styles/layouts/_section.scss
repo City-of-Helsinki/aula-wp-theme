@@ -1,0 +1,25 @@
+@mixin sectionPaddings() {
+  padding: 2rem 0;
+
+  @include media-breakpoint-up(md) {
+	padding: 2.5rem 0;
+  }
+
+  @include media-breakpoint-up(xl) {
+	padding: 4rem 0;
+  }
+}
+
+section {
+  &.section--bg-primary {
+	background-color: $primary;
+  }
+
+  &.section--bg-secondary {
+	background-color: $secondary;
+  }
+}
+
+.page-container {
+  @include sectionPaddings;
+}

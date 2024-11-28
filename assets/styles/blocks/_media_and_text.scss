@@ -1,0 +1,12 @@
+/**
+ * Media & text block
+ */
+
+.gutenberg {
+  .wp-block-media-text {
+    &.alignfull {
+      margin-left: rem(-15px);
+      margin-right: rem(-15px);
+    }
+  }
+}

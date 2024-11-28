@@ -1,0 +1,9 @@
+.not-found-wrapper {
+  background-color: #DEDFE1;
+  color: #000;
+  padding: rem(15px);
+
+  @include media-breakpoint-up(md) {
+	padding: rem(25px);
+  }
+}

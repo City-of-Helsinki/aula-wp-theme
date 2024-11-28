@@ -1,0 +1,23 @@
+h1 {
+  @include make-heading($h1-base-font-size, 0.5rem, 1.5rem);
+}
+
+h2 {
+  @include make-heading($h2-base-font-size, 0.5rem, 1.5rem);
+}
+
+h3 {
+  @include make-heading($h3-base-font-size, 0.5rem, 1.5rem);
+}
+
+h4 {
+  @include make-heading($h4-base-font-size, 0.5rem, 1rem);
+}
+
+h5 {
+  @include make-heading($h5-base-font-size, 0.5rem, 1rem);
+}
+
+h6 {
+  @include make-heading($h6-base-font-size, 0.5rem, 1rem);
+}

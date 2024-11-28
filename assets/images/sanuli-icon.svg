@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37.95 37.52">
+	<defs>
+		<style>.sanuli-cls-1,.sanuli-cls-2{fill:#fff;}.sanuli-cls-3{fill:#c9b458;}.sanuli-cls-4{fill:#6aaa64;}.sanuli-cls-2{font-family:Arial-BoldMT,
+			Arial;font-size:11.57px;}
+		</style>
+	</defs>
+	<g>
+		<g>
+			<path class="sanuli-cls-4" d="M1.08,13.38H10.9v10.9H1.08c-.6,0-1.08-.48-1.08-1.08V14.46c0-.6,.48-1.08,1.08-1.08Z"/>
+			<path class="sanuli-cls-1" d="M23.3,14.5v8.65H14.65V14.5h8.65m1.12-1.12H13.53v10.9h10.9V13.38h0Z"/>
+			<path class="sanuli-cls-1"
+				  d="M23.3,27.74v8.65H14.65v-8.65h8.65m1.12-1.12H13.53v9.82c0,.6,.48,1.08,1.08,1.08h8.74c.6,0,1.08-.48,1.08-1.08v-9.82h0Z"/>
+			<path class="sanuli-cls-1"
+				  d="M23.3,1.12V9.77H14.65V1.12h8.65m.04-1.12H14.61c-.6,0-1.08,.48-1.08,1.08V10.9h10.9V1.08c0-.6-.48-1.08-1.08-1.08h0Z"/>
+			<path class="sanuli-cls-3"
+				  d="M27.05,13.38h9.82c.6,0,1.08,.48,1.08,1.08v8.74c0,.6-.48,1.08-1.08,1.08h-9.82V13.38h0Z"/>
+			<text class="sanuli-cls-2" transform="translate(1.6 22.88)">
+				<tspan x="0" y="0">S</tspan>
+			</text>
+		</g>
+	</g>
+</svg>

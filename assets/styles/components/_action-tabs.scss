@@ -1,0 +1,103 @@
+.tabs-wrapper {
+  width: 100%;
+  max-width: rem(960px);
+  padding: rem(70px 24px);
+  margin-right: auto;
+  margin-left: auto;
+
+  .has-search-hidden & {
+	padding: rem(0 24px 70px 24px);
+  }
+
+  @include media-breakpoint-up(xl) {
+	padding: rem(70px 0);
+
+	.has-search-hidden & {
+	  padding: rem( 0 0 70px 0);
+	}
+  }
+
+	@include create-thinkpad-config {
+		padding: rem(20px 0);
+
+		.has-search-hidden & {
+			padding: rem( 0 0 20px 0);
+		}
+	}
+}
+
+.action-tabs-nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  &__item {
+	display: inline-block;
+  }
+
+  &__link {
+	background-color: transparentize($hel-silver, 0.1);
+	border: none;
+	font-size: rem(14px);
+	color: #000;
+	padding: rem(5px 15px);
+	border-top-left-radius: rem(2px);
+	border-top-right-radius: rem(2px);
+
+	@include hover-focus() {
+	  background-color: #fff;
+	  color: #000;
+	}
+  }
+}
+
+.action-tabs__single-tab {
+  display: none;
+  position: relative;
+
+  &.action-tabs__single-tab--active {
+	display: initial;
+  }
+}
+
+.drive-loading-overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  background-color: transparentize($hel-silver, 0.1);
+  color: #000;
+
+  &.drive-loading-overlay--shown {
+	display: block;
+  }
+
+  &__content {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+
+	> svg {
+	  width: rem(100px);
+	  height: auto;
+	  @include rotating;
+	}
+  }
+}
+
+.tab-content-drive-auth {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  background-color: transparentize($hel-silver, 0.2);
+  padding: rem(24px 10px);
+
+  @include media-breakpoint-up(md) {
+	padding: rem(35px 24px);
+  }
+}

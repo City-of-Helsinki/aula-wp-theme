@@ -1,0 +1,40 @@
+/**
+ * Button block
+ */
+
+.wp-block-button {
+  .wp-block-button__link {
+    @extend .btn;
+    @include button-variant($primary, $primary);
+  }
+
+  &.is-style-squared {
+    .wp-block-button__link {
+      border-radius: 0;
+    }
+  }
+
+  &.is-style-default {
+    .wp-block-button__link {
+      padding: rem(6px 28px);
+      border-radius: rem(20px);
+    }
+  }
+
+  &.is-style-full-width {
+    .wp-block-button__link {
+      width: 100%;
+      padding: rem(13px 28px);
+      border-radius: rem(20px);
+      font-weight: 600;
+    }
+  }
+
+  &.is-style-outline {
+    .wp-block-button__link {
+      @extend .btn;
+      @include button-outline-variant($primary);
+      border-radius: rem(20px);
+    }
+  }
+}

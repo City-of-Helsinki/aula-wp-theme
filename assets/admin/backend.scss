@@ -1,0 +1,56 @@
+/**
+ * Login logo
+ */
+
+.login h1 a {
+  background: url('https://aula.edu.hel.fi/wp/wp-content/themes/oppijaportaali/assets/dist/images/aula-login-logo.png') center center no-repeat;
+  -webkit-background-size: 100% auto;
+  -moz-background-size: 100% auto;
+  background-size: 100% auto;
+}
+
+// Hide lost password link in login
+.login a[href$="wp-login.php?action=lostpassword"] {
+  display: none;
+}
+
+/**
+ * Gutenberg back end stuff
+ * None here any more...
+ */
+@import "../styles/common/functions";
+@import "../styles/common/variables";
+@import "../styles/common/variables";
+@import "../styles/common/mixins";
+@import "~bootstrap/scss/mixins";
+
+.editor-styles-wrapper {
+  @each $name, $color in $page-theme-colors {
+
+    .has-text-color, .has-inline-color {
+      &.has-#{$name}-color {
+        color: $color;
+
+        a {
+          color: $color;
+
+          &:hover, &:focus, &:active {
+            color: $color;
+          }
+        }
+      }
+    }
+
+    .has-background, .wp-block-cover {
+      &.has-#{$name}-background-color {
+        background-color: $color;
+      }
+    }
+  }
+
+  @import "../styles/blocks/spacer";
+
+  @import "../styles/components/post-lift";
+
+  @import "../styles/blocks/acf/acf-gb-blocks";
+}

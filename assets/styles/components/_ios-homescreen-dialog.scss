@@ -1,0 +1,16 @@
+.ios-homescreen-dialog {
+  background: #f2f8ff;
+  border-radius: 1rem;
+  display: none;
+  padding: 1.2rem 1rem;
+  text-align: center;
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 2rem);
+}
+.ios-homescreen-dialog span {
+  position: relative;
+  z-index: 1;
+}

@@ -1,0 +1,18 @@
+/**
+ * Gallery block
+ */
+
+.gutenberg {
+  .wp-block-gallery {
+    &.alignfull {
+      margin-left: rem(-15px);
+      margin-right: rem(-15px);
+    }
+  }
+}
+
+.wp-block-gallery {
+  figcaption {
+    text-align: center;
+  }
+}

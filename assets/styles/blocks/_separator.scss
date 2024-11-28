@@ -1,0 +1,22 @@
+.wp-block-separator {
+  margin-top: rem(40px);
+  margin-bottom: rem(40px);
+  display: block;
+  clear: both;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  border-bottom: rem(2px) solid #EEE;
+
+  @include media-breakpoint-up(lg) {
+    width: 25%;
+  }
+
+  &.is-style-wide {
+    width: 100%;
+  }
+
+  &.is-style-dots {
+    border-bottom: rem(5px) dotted #EEE;
+  }
+}

@@ -1,0 +1,44 @@
+/**
+ * Table block
+ */
+
+.gutenberg {
+  .wp-block-table {
+    &.alignfull {
+      margin-left: rem(-15px);
+      margin-right: rem(-15px);
+    }
+  }
+}
+
+.wp-block-table {
+  th, td {
+    padding: rem(8px);
+  }
+
+  td {
+    border: rem(1px) solid $primary;
+  }
+
+  tfoot {
+    opacity: 0.5;
+  }
+
+  &.is-style-stripes {
+
+    > table {
+
+      //Same as table-striped in bootstrap
+      tbody tr:nth-of-type(#{$table-striped-order}) {
+        background-color: $table-accent-bg;
+      }
+
+      border: none;
+
+      td {
+        border: none;
+      }
+    }
+
+  }
+}

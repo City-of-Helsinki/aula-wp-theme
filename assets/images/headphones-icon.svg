@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35.54 30.83">
+	<defs>
+		<style>
+			.headphone-cls-1{fill:#fff;}.headphone-cls-2{fill:none;stroke:#fff;stroke-linecap:round;stroke-miterlimit:10;stroke-width:1.95px;}
+		</style>
+	</defs>
+	<g>
+		<g>
+			<path class="headphone-cls-2" d="M34.57,24.14v-6.36C34.57,8.5,27.05,.97,17.77,.97S.97,8.5,.97,17.77v6.36"/>
+			<rect class="headphone-cls-1" x="3.1" y="15.72" width="7.46" height="15.12" rx="1.87" ry="1.87"/>
+			<rect class="headphone-cls-1" x="24.98" y="15.72" width="7.46" height="15.12" rx="1.87" ry="1.87"/>
+		</g>
+	</g>
+</svg>

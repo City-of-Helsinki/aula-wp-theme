@@ -1,0 +1,11 @@
+.gb-latest-posts {
+  padding: rem(32px 0);
+
+  &__row {
+	@include make-row();
+  }
+
+  &__title {
+	@include make-heading(1.3rem, 0, 2rem);
+  }
+}
