@@ -1,4 +1,4 @@
-FROM container-registry.platta-net.hel.fi/wp-test-wordpress-testi/hki-base-image-test
+FROM container-registry.platta-net.hel.fi/hki-kanslia-wordpress-base/openshift-wordpress-base
 
 ARG MOUNT_SECRET="false"
 ARG COMPOSER_AUTH="{}"
