@@ -10,4 +10,4 @@ RUN mkdir -p /opt/app-root/src/.config/composer && \
     fi
 
 RUN composer config repositories.aula-wp-theme vcs https://github.com/City-of-Helsinki/aula-wp-theme &&\
-    composer require city-of-helsinki/aula-wp-theme
+    composer require city-of-helsinki/aula-wp-theme && rm -f /opt/app-root/src/.config/composer/auth.json
