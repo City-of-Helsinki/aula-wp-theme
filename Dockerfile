@@ -1,10 +1,12 @@
 FROM container-registry.platta-net.hel.fi/hki-kanslia-wordpress-base/openshift-wordpress-base
 
 # Replace wp-config.php with a custom version
-COPY --chmod=0664 wp-config.php /opt/app-root/src/wp-config.php
+COPY --chmod=0664 wp-config.php wordfence-waf.php /opt/app-root/src/
 
 ARG MOUNT_SECRET="false"
 ARG COMPOSER_AUTH="{}"
+
+RUN mkdir /tmp/wflogs
 
 # build volume auth
 RUN mkdir -p /opt/app-root/src/.config/composer && \
