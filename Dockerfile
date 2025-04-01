@@ -6,7 +6,7 @@ COPY --chmod=0664 wp-config.php wordfence-waf.php /opt/app-root/src/
 ARG MOUNT_SECRET="false"
 ARG COMPOSER_AUTH="{}"
 
-RUN mkdir /tmp/wflogs
+RUN mkdir -m 777 /tmp/wflogs
 
 # build volume auth
 RUN mkdir -p /opt/app-root/src/.config/composer && \
