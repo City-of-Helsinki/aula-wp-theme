@@ -39,6 +39,7 @@ resources:
     - repository: aula-pipelines
       type: git
       ref: refs/heads/ansible_automation_update_review
+
       # Azure DevOps project/repository
       name: aula/aula-pipelines
 
