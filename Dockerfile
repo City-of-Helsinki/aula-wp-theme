@@ -1,4 +1,4 @@
-FROM container-registry.platta-net.hel.fi/hki-kanslia-wordpress-base/openshift-wordpress-base
+FROM helsinki.azurecr.io/openshift-wordpress-base:latest
 
 # Replace wp-config.php with a custom version
 COPY --chmod=0664 wp-config.php wordfence-waf.php /opt/app-root/src/
