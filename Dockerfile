@@ -18,4 +18,6 @@ RUN composer config repositories.aula-wp-theme vcs https://github.com/City-of-He
     composer require city-of-helsinki/aula-wp-theme && \
     composer config repositories.advanced-custom-fields-pro vcs https://github.com/City-of-Helsinki/wordpress-helfi-plugin-advanced-custom-fields-pro && \
     composer require acf/advanced-custom-fields-pro && \
+    composer config repositories.wpackagist composer https://wpackagist.org && \
+    composer require wpackagist-plugin/wp-piwik && \
     rm -f /opt/app-root/src/.config/composer/auth.json
