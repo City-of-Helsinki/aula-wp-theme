@@ -20,4 +20,11 @@ RUN composer config repositories.aula-wp-theme vcs https://github.com/City-of-He
     composer require acf/advanced-custom-fields-pro && \
     composer config repositories.wpackagist composer https://wpackagist.org && \
     composer require wpackagist-plugin/wp-piwik && \
+    composer require wpackagist-plugin/polylang:3.6.7 && \
+    composer require wpackagist-plugin/wordfence:8.0.5 && \
+    composer require wpackagist-plugin/remove-dashboard-access-for-non-admins:1.2.1 && \
+    composer require wpackagist-plugin/safe-svg:2.3.1 && \
+    composer require wpackagist-plugin/simple-page-ordering:2.7.3 && \
+    composer require wpackagist-plugin/wpo365-login:36.0 && \
+    composer require wpackagist-plugin/wpo365-samesite:1.5 && \
     rm -f /opt/app-root/src/.config/composer/auth.json
