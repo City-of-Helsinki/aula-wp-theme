@@ -17,7 +17,7 @@ RUN mkdir -p /opt/app-root/src/.config/composer && \
 RUN composer config repositories.oppijaportaali vcs https://github.com/City-of-Helsinki/aula-wp-theme && \
     composer require city-of-helsinki/oppijaportaali && \
     composer config repositories.oppi-school-picker vcs https://github.com/City-of-Helsinki/wordpress-helfi-plugin-oppi-school-picker && \
-    composer require acf/advanced-custom-fields-pro && \
+    composer require city-of-helsinki/oppi-school-picker && \
     composer config repositories.advanced-custom-fields-pro vcs https://github.com/City-of-Helsinki/wordpress-helfi-plugin-advanced-custom-fields-pro && \
     composer require acf/advanced-custom-fields-pro && \
     composer config repositories.wpackagist composer https://wpackagist.org && \
