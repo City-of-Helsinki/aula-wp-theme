@@ -14,5 +14,8 @@ RUN mkdir -p /opt/app-root/src/.config/composer && \
         cp /mnt/secrets/* /opt/app-root/src/.config/composer; \
     fi
 
-RUN composer config repositories.aula-wp-theme vcs https://github.com/City-of-Helsinki/aula-wp-theme &&\
-    composer require city-of-helsinki/aula-wp-theme && rm -f /opt/app-root/src/.config/composer/auth.json
+RUN composer config repositories.aula-wp-theme vcs https://github.com/City-of-Helsinki/aula-wp-theme && \
+    composer require city-of-helsinki/aula-wp-theme && \
+    composer config repositories.oppi-school-picker vcs https://github.com/City-of-Helsinki/oppi-school-picker && \
+    composer require city-of-helsinki/oppi-school-picker && \
+    rm -f /opt/app-root/src/.config/composer/auth.json
