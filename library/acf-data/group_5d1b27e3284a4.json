@@ -3,162 +3,10 @@
     "title": "Aulan asetukset",
     "fields": [
         {
-            "key": "field_5d1dd21e0ca6c",
-            "label": "Palveluiden asetukset",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_5d1dd2350ca6d",
-            "label": "Palvelut (tulevat poistumaan)",
-            "name": "oppijaportaali_services",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "collapsed": "",
-            "min": 0,
-            "max": 0,
-            "layout": "block",
-            "button_label": "Lisää palvelu",
-            "sub_fields": [
-                {
-                    "key": "field_5f68699d7e1de",
-                    "label": "Palvelun nimi",
-                    "name": "title",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "33.3333333333",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_5f76ee7f341fc",
-                    "label": "Palvelun nimi (swe)",
-                    "name": "title_sv",
-                    "type": "text",
-                    "instructions": "Voit asettaa valinnaisen ruotsinkielisen nimen tässä.",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "33.3333333333",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_5f76ee8e341fd",
-                    "label": "Palvelun nimi (eng)",
-                    "name": "title_en",
-                    "type": "text",
-                    "instructions": "Voit asettaa valinnaisen englanninkielisen nimen tässä.",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "33.3333333333",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_5f686a137e1df",
-                    "label": "Palvelun URL",
-                    "name": "url",
-                    "type": "url",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "33.3333333333",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": ""
-                },
-                {
-                    "key": "field_5f686a257e1e0",
-                    "label": "Palvelun ikoni",
-                    "name": "icon",
-                    "type": "image",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "33.3333333333",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "array",
-                    "preview_size": "medium",
-                    "library": "all",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": ""
-                },
-                {
-                    "key": "field_5f69ccfecf98a",
-                    "label": "Aseta oletuksena näkyviin",
-                    "name": "is_default",
-                    "type": "true_false",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "33.3333333333",
-                        "class": "",
-                        "id": ""
-                    },
-                    "message": "",
-                    "default_value": 0,
-                    "ui": 0,
-                    "ui_on_text": "",
-                    "ui_off_text": ""
-                }
-            ]
-        },
-        {
             "key": "field_5f7c3c3ec8906",
             "label": "Random nuotti linkki",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -169,12 +17,14 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_5f84521854a7b",
             "label": "Satunnaisuus",
             "name": "chord_randomness",
+            "aria-label": "",
             "type": "text",
             "instructions": "Aseta murtolukuna, esim. 1\/10. Jos aina näkyviin, aseta 1\/1.",
             "required": 0,
@@ -194,6 +44,7 @@
             "key": "field_5f7c3c51c8907",
             "label": "Linkki (suomi)",
             "name": "chord_link",
+            "aria-label": "",
             "type": "url",
             "instructions": "",
             "required": 0,
@@ -210,6 +61,7 @@
             "key": "field_5f7c3c82c8908",
             "label": "Linkki (ruotsi)",
             "name": "chord_link_sv",
+            "aria-label": "",
             "type": "url",
             "instructions": "",
             "required": 0,
@@ -226,6 +78,7 @@
             "key": "field_5f7c3c91c8909",
             "label": "Linkki (englanti)",
             "name": "chord_link_en",
+            "aria-label": "",
             "type": "url",
             "instructions": "",
             "required": 0,
@@ -242,6 +95,7 @@
             "key": "field_5d1b27f36ad66",
             "label": "Scriptit",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -252,12 +106,14 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_5d1b27fd6ad67",
             "label": "Head-osion scriptit",
             "name": "oppijaportaali_scripts_head",
+            "aria-label": "",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -277,6 +133,7 @@
             "key": "field_5d1b28446ad68",
             "label": "Avaavan body-tagin jälkeen tulevat scriptit",
             "name": "oppijaportaali_scripts_after_body",
+            "aria-label": "",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -296,6 +153,7 @@
             "key": "field_5d1b287d6ad6a",
             "label": "Footeriin tulevat scriptit",
             "name": "oppijaportaali_scripts_footer",
+            "aria-label": "",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -315,6 +173,7 @@
             "key": "field_6082c0f7829a2",
             "label": "Häiriötiedote",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -325,12 +184,14 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_6082c10e829a3",
             "label": "Häiriötiedotteen viesti",
             "name": "service_fault_message",
+            "aria-label": "",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
@@ -350,6 +211,7 @@
             "key": "field_6082c123829a4",
             "label": "Häiriötiedotteen viesti, lue lisää",
             "name": "service_fault_message_read_more",
+            "aria-label": "",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
@@ -369,6 +231,7 @@
             "key": "field_6082c13c18f94",
             "label": "Häiriötiedotteen teema",
             "name": "service_fault_theme",
+            "aria-label": "",
             "type": "select",
             "instructions": "",
             "required": 0,
@@ -396,6 +259,7 @@
             "key": "field_6082c1720dfbf",
             "label": "Häiriötiedote päällä",
             "name": "service_fault_message_status",
+            "aria-label": "",
             "type": "true_false",
             "instructions": "",
             "required": 0,
@@ -415,6 +279,7 @@
             "key": "field_6082c194685ab",
             "label": "Ajastettu häiriötiedote",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -425,12 +290,14 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_6082c1a7685ac",
             "label": "Ajastetun häiriötiedotteen viesti",
             "name": "timed_service_fault_message",
+            "aria-label": "",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
@@ -450,6 +317,7 @@
             "key": "field_6082c1be685ad",
             "label": "Ajastetun häiriötiedotteen viesti, lue lisää",
             "name": "timed_service_fault_message_read_more",
+            "aria-label": "",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
@@ -469,6 +337,7 @@
             "key": "field_6082c1da685ae",
             "label": "Ajastetun häiriötiedotteen teema",
             "name": "timed_service_fault_theme",
+            "aria-label": "",
             "type": "select",
             "instructions": "",
             "required": 0,
@@ -496,6 +365,7 @@
             "key": "field_6082c206bed02",
             "label": "Ajastettu häiriötiedote alkaa (päivä)",
             "name": "timed_service_fault_time_start_date",
+            "aria-label": "",
             "type": "date_picker",
             "instructions": "",
             "required": 0,
@@ -513,6 +383,7 @@
             "key": "field_6082c265bed04",
             "label": "Ajastettu häiriötiedote alkaa (aika)",
             "name": "timed_service_fault_time_start_time",
+            "aria-label": "",
             "type": "time_picker",
             "instructions": "",
             "required": 0,
@@ -529,6 +400,7 @@
             "key": "field_6082c239bed03",
             "label": "Ajastettu häiriötiedote loppuu (päivä)",
             "name": "timed_service_fault_time_end_date",
+            "aria-label": "",
             "type": "date_picker",
             "instructions": "",
             "required": 0,
@@ -546,6 +418,7 @@
             "key": "field_6082c298bed05",
             "label": "Ajastettu häiriötiedote loppuu (aika)",
             "name": "timed_service_fault_time_end_time",
+            "aria-label": "",
             "type": "time_picker",
             "instructions": "",
             "required": 0,
@@ -562,6 +435,7 @@
             "key": "field_631705c56ac3f",
             "label": "Tietoa sivusta",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -572,12 +446,14 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_608a8eb9beef6",
             "label": "Tietoja sivusta sisältö",
             "name": "site_info_content",
+            "aria-label": "",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
@@ -597,6 +473,7 @@
             "key": "field_60c47880521f1",
             "label": "Oppiaste-asetukset",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -607,12 +484,14 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_60c477d1719ac",
             "label": "Peruskoulu 1.luokka kategoria",
             "name": "oppiaste_term_peruskoulu_1",
+            "aria-label": "",
             "type": "taxonomy",
             "instructions": "",
             "required": 0,
@@ -629,12 +508,14 @@
             "save_terms": 0,
             "load_terms": 0,
             "return_format": "id",
-            "multiple": 0
+            "multiple": 0,
+            "bidirectional_target": []
         },
         {
             "key": "field_60c47834521e4",
             "label": "Peruskoulu 2.luokka kategoria",
             "name": "oppiaste_term_peruskoulu_2",
+            "aria-label": "",
             "type": "taxonomy",
             "instructions": "",
             "required": 0,
@@ -651,12 +532,14 @@
             "save_terms": 0,
             "load_terms": 0,
             "return_format": "id",
-            "multiple": 0
+            "multiple": 0,
+            "bidirectional_target": []
         },
         {
             "key": "field_60c4783f521e5",
             "label": "Peruskoulu 3.luokka kategoria",
             "name": "oppiaste_term_peruskoulu_3",
+            "aria-label": "",
             "type": "taxonomy",
             "instructions": "",
             "required": 0,
@@ -673,12 +556,14 @@
             "save_terms": 0,
             "load_terms": 0,
             "return_format": "id",
-            "multiple": 0
+            "multiple": 0,
+            "bidirectional_target": []
         },
         {
             "key": "field_60c47846521e6",
             "label": "Peruskoulu 4.luokka kategoria",
             "name": "oppiaste_term_peruskoulu_4",
+            "aria-label": "",
             "type": "taxonomy",
             "instructions": "",
             "required": 0,
@@ -695,12 +580,14 @@
             "save_terms": 0,
             "load_terms": 0,
             "return_format": "id",
-            "multiple": 0
+            "multiple": 0,
+            "bidirectional_target": []
         },
         {
             "key": "field_60c47848521e7",
             "label": "Peruskoulu 5.luokka kategoria",
             "name": "oppiaste_term_peruskoulu_5",
+            "aria-label": "",
             "type": "taxonomy",
             "instructions": "",
             "required": 0,
@@ -717,12 +604,14 @@
             "save_terms": 0,
             "load_terms": 0,
             "return_format": "id",
-            "multiple": 0
+            "multiple": 0,
+            "bidirectional_target": []
         },
         {
             "key": "field_60c4784b521e8",
             "label": "Peruskoulu 6.luokka kategoria",
             "name": "oppiaste_term_peruskoulu_6",
+            "aria-label": "",
             "type": "taxonomy",
             "instructions": "",
             "required": 0,
@@ -739,12 +628,14 @@
             "save_terms": 0,
             "load_terms": 0,
             "return_format": "id",
-            "multiple": 0
+            "multiple": 0,
+            "bidirectional_target": []
         },
         {
             "key": "field_60c4784c521e9",
             "label": "Peruskoulu 7.luokka kategoria",
             "name": "oppiaste_term_peruskoulu_7",
+            "aria-label": "",
             "type": "taxonomy",
             "instructions": "",
             "required": 0,
@@ -761,12 +652,14 @@
             "save_terms": 0,
             "load_terms": 0,
             "return_format": "id",
-            "multiple": 0
+            "multiple": 0,
+            "bidirectional_target": []
         },
         {
             "key": "field_60c4784f521ea",
             "label": "Peruskoulu 8.luokka kategoria",
             "name": "oppiaste_term_peruskoulu_8",
+            "aria-label": "",
             "type": "taxonomy",
             "instructions": "",
             "required": 0,
@@ -783,12 +676,14 @@
             "save_terms": 0,
             "load_terms": 0,
             "return_format": "id",
-            "multiple": 0
+            "multiple": 0,
+            "bidirectional_target": []
         },
         {
             "key": "field_60c47850521eb",
             "label": "Peruskoulu 9.luokka kategoria",
             "name": "oppiaste_term_peruskoulu_9",
+            "aria-label": "",
             "type": "taxonomy",
             "instructions": "",
             "required": 0,
@@ -805,12 +700,14 @@
             "save_terms": 0,
             "load_terms": 0,
             "return_format": "id",
-            "multiple": 0
+            "multiple": 0,
+            "bidirectional_target": []
         },
         {
             "key": "field_60c47853521ec",
             "label": "Peruskoulu 10.luokka kategoria",
             "name": "oppiaste_term_peruskoulu_10",
+            "aria-label": "",
             "type": "taxonomy",
             "instructions": "",
             "required": 0,
@@ -827,12 +724,14 @@
             "save_terms": 0,
             "load_terms": 0,
             "return_format": "id",
-            "multiple": 0
+            "multiple": 0,
+            "bidirectional_target": []
         },
         {
             "key": "field_60c47856521ed",
             "label": "Lukio 1.luokka kategoria",
             "name": "oppiaste_term_lukio_1",
+            "aria-label": "",
             "type": "taxonomy",
             "instructions": "",
             "required": 0,
@@ -849,12 +748,14 @@
             "save_terms": 0,
             "load_terms": 0,
             "return_format": "id",
-            "multiple": 0
+            "multiple": 0,
+            "bidirectional_target": []
         },
         {
             "key": "field_60c4786f521ee",
             "label": "Lukio 2.luokka kategoria",
             "name": "oppiaste_term_lukio_2",
+            "aria-label": "",
             "type": "taxonomy",
             "instructions": "",
             "required": 0,
@@ -871,12 +772,14 @@
             "save_terms": 0,
             "load_terms": 0,
             "return_format": "id",
-            "multiple": 0
+            "multiple": 0,
+            "bidirectional_target": []
         },
         {
             "key": "field_60c47874521ef",
             "label": "Lukio 3.luokka kategoria",
             "name": "oppiaste_term_lukio_3",
+            "aria-label": "",
             "type": "taxonomy",
             "instructions": "",
             "required": 0,
@@ -893,12 +796,14 @@
             "save_terms": 0,
             "load_terms": 0,
             "return_format": "id",
-            "multiple": 0
+            "multiple": 0,
+            "bidirectional_target": []
         },
         {
             "key": "field_60c47876521f0",
             "label": "Lukio 4.luokka kategoria",
             "name": "oppiaste_term_lukio_4",
+            "aria-label": "",
             "type": "taxonomy",
             "instructions": "",
             "required": 0,
@@ -915,12 +820,14 @@
             "save_terms": 0,
             "load_terms": 0,
             "return_format": "id",
-            "multiple": 0
+            "multiple": 0,
+            "bidirectional_target": []
         },
         {
             "key": "field_60cc81dff7bfa",
             "label": "Ammattikoulut kategoria",
             "name": "oppiaste_term_ammattikoulu",
+            "aria-label": "",
             "type": "taxonomy",
             "instructions": "",
             "required": 0,
@@ -937,12 +844,14 @@
             "save_terms": 0,
             "load_terms": 0,
             "return_format": "id",
-            "multiple": 0
+            "multiple": 0,
+            "bidirectional_target": []
         },
         {
             "key": "field_60cc81f1f7bfb",
             "label": "Oletuskategoria",
             "name": "oppiaste_term_default",
+            "aria-label": "",
             "type": "taxonomy",
             "instructions": "",
             "required": 0,
@@ -959,12 +868,14 @@
             "save_terms": 0,
             "load_terms": 0,
             "return_format": "id",
-            "multiple": 0
+            "multiple": 0,
+            "bidirectional_target": []
         },
         {
             "key": "field_608a8eabbeef5",
             "label": "Musiikki",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -975,12 +886,14 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_631705d66ac40",
             "label": "Musiikkilista",
             "name": "music_list",
+            "aria-label": "",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -1000,6 +913,7 @@
                     "key": "field_631705ef6ac41",
                     "label": "Musiikki kappale",
                     "name": "music_track",
+                    "aria-label": "",
                     "type": "file",
                     "instructions": "Lisää mp3-tiedosto",
                     "required": 0,
@@ -1013,9 +927,11 @@
                     "library": "all",
                     "min_size": "",
                     "max_size": "",
-                    "mime_types": "mp3"
+                    "mime_types": "mp3",
+                    "parent_repeater": "field_631705d66ac40"
                 }
-            ]
+            ],
+            "rows_per_page": 20
         }
     ],
     "location": [
@@ -1036,5 +952,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1662989255
+    "modified": 1738327104
 }

@@ -4,7 +4,6 @@ const activeRow = $('.services-row--active');
 const inactiveRow = $('.services-row--inactive');
 const nameInput = $('#service-name-input');
 const urlInput = $('#service-url-input');
-const descriptionInput = $('#service-description-input');
 
 const setServicesRow = (setVisible, content) => {
 	if(setVisible === 1) {
@@ -17,7 +16,6 @@ const setServicesRow = (setVisible, content) => {
 const clearInputs = () => {
 	nameInput.val('');
 	urlInput.val('');
-	descriptionInput.val('');
 };
 
 const addNewOwnService = () => {
@@ -28,9 +26,8 @@ const addNewOwnService = () => {
 		notifications.hide();
 		const serviceName = nameInput.val();
 		const serviceUrl = urlInput.val();
-		const serviceDescription = descriptionInput.val();
 
-		if (!serviceName || !serviceUrl || !serviceDescription) {
+		if (!serviceName || !serviceUrl) {
 			notifications.show();
 			notifications.text(oppijaportaali_js.add_new_form_errors);
 			return;
@@ -45,8 +42,7 @@ const addNewOwnService = () => {
 				action: 'add_new_own_service',
 				service_details: {
 					serviceName: serviceName,
-					serviceUrl: serviceUrl,
-					serviceDescription: serviceDescription
+					serviceUrl: serviceUrl
 				},
 				user_id: oppijaportaali_js.user_id,
 				nonce: oppijaportaali_js.nonce

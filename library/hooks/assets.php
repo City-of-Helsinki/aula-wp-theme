@@ -95,6 +95,16 @@ add_action(
 		);
 
 		/**
+		 * enable standalone mode on IOS Safari
+		 */
+		wp_enqueue_script(
+			'standalone',
+			'/wp-content/themes/oppijaportaali/assets/scripts/standalone.js',
+			[],
+			oppijaportaali_theme()->get( 'Version' )
+		);
+
+		/**
 		 * Move jquery to footer
 		 */
 		wp_scripts()->add_data( 'jquery', 'group', 1 );

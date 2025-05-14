@@ -23,7 +23,10 @@ class User_services {
 				}
 			}
 
-			update_user_meta( $this->user->ID, 'user_services', $new_user_settings );
+			// Save to meta only when logged in
+			if ( is_user_logged_in() ) {
+				update_user_meta( $this->user->ID, 'user_services', $new_user_settings );
+			}
 
 			return $new_user_settings;
 		} else {
@@ -32,7 +35,7 @@ class User_services {
 	}
 
 	public function get_services_api_response() {
-		$oppiaste_checker = new Oppiaste_checker();
+		$oppiaste_checker  = new Oppiaste_checker();
 		$api_response      = wp_remote_get( get_rest_url() . 'wp/v2/services?oppiaste_term=' . $oppiaste_checker::get_oppiaste_options_term_value() . '&lang=' . pll_current_language() );
 		$api_response_body = wp_remote_retrieve_body( $api_response );
 

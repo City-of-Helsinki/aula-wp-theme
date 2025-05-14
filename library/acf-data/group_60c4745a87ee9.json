@@ -3,28 +3,10 @@
     "title": "Palvelun asetukset",
     "fields": [
         {
-            "key": "field_60c474a3978e3",
-            "label": "Palvelun kuvaus (näkyvillä popupissa)",
-            "name": "service_description",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": 2,
-            "new_lines": ""
-        },
-        {
             "key": "field_60c47478978e2",
             "label": "Palvelun URL",
             "name": "service_url",
+            "aria-label": "",
             "type": "url",
             "instructions": "Aloita osoite https:\/\/ tai http:\/\/",
             "required": 0,
@@ -41,6 +23,7 @@
             "key": "field_60c474d4978e4",
             "label": "Palvelun kuvake",
             "name": "service_icon",
+            "aria-label": "",
             "type": "image",
             "instructions": "",
             "required": 0,
@@ -79,5 +62,6 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1623487780
+    "show_in_rest": 0,
+    "modified": 1738327175
 }

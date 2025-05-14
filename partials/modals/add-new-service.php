@@ -29,12 +29,6 @@
 							<?php pll_esc_html_e( 'Aloitathan osoitteen https:// tai http://...' ); ?>
 						</small>
 					</div>
-					<div class="add-new-service-form__field-group">
-						<label for="service-description-input" class="add-new-service-form__label">
-							<?php pll_esc_html_e( 'Palvelun lyhyt kuvaus' ); ?>
-						</label>
-						<textarea id="service-description-input" class="add-new-service-form__form-field"></textarea>
-					</div>
 					<button type="submit" class="add-new-service-form__btn add-new-service-form__btn--submit">
 						<?php pll_esc_html_e( 'Tallenna' ); ?>
 						<?php Utils()->the_svg( 'loop-icon' ); ?>

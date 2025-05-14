@@ -10,11 +10,17 @@ $query_args = [
 	'posts_per_page' => 3,
 	'post__not_in'   => $hided_info_windows,
 	'tax_query'      => [
+		'relation' => 'OR',
+		[
+			'taxonomy' => 'service-oppiaste',
+			'field'    => 'slug',
+			'terms'    => ['kaikki', 'kaikki-en', 'kaikki-sv', 'kaikki-se'],
+		],
 		[
 			'taxonomy' => 'service-oppiaste',
 			'terms'    => $oppiaste_checker::get_oppiaste_options_term_value(),
 		],
-	],
+	]
 ];
 
 $query = new WP_Query( $query_args );

@@ -1,4 +1,69 @@
-# Server setup
+# Aula
+
+This is WP-theme repo for Helsinki Aula-service. Aula is a student services, where students can find all relevant information within one view.
+
+Page view is created by these elements:
+- Header including logo, date&clock details and profile settings opener
+- Search box (connected to Google or Duckduckgo)
+- Services/Google integration box
+- Link lifts
+
+Features in the page are heavily linked with [Oppi school picker plugin](https://github.com/helkasko/oppi-school-picker). With the plugin functions, it's possible to detect the user by the school id. Example different services can be shown for peruskoulu-user or lukio-user.
+
+## Services detection by "oppiaste"
+As said above, different services are provided for different "oppiaste"-students. Services are created to WP custom post type `services`. 
+
+Each service can be tagged with custom taxonomy `service-oppiaste`. With this custom taxonomy, we can show different services by user's "oppiaste". To this to work properly, taxonomy terms must be mapped, so that Oppi School Picer can detect terms correctly. This mapping in done in `Asetukset => Aulan asetukset => Oppiaste-asetukset`.
+
+### Services functions
+By default (if user has not done any customising), six services are shown. Rest can be viewed using the arrow button.
+For services, user can do various things:
+- each service can be set as default / remove as default
+- user can also add custom links, these links are added to the end of non-default services-set. User can then move own service to default row, if wanted. All custom links are stored to separate db table `wp_user_own_services`.
+
+As users can rearrange the services, custom api endpoint has been created to retrieve info by each service. This end point is in `/wp/v2/services`. TODO in 2025??!! It would be probably wise at some point optimise the customising features so that end point could be removed.
+
+### Link lifts by user's school id
+Link lifts in the bottom of the page uses user's school id along with Oppi School Picker helper functions to show link to school home page, link to "kouluruokailu", link to hobbies etc.
+
+There is also possible to crate custom link lifts for each oppiaste. This is done in page settings.
+
+### Info windows / "info ikkunat"
+Info windows are a sticker feature that will appear on left side of the screen. Info windows are wp custom post type `info-popups`. Admins can add different info windows for users. Info windows will appear based on "oppiaste" similar in the way services are shown.
+
+Functionality for info windows is basically custom javascript. See file `assets/scripts/routes/lib/infoWindow.js`.
+
+### Concentrations / "Keskityymiset"
+Concentrations are accessed via bottom left button (yoga person). These are handled as wp custom post type `concentration`. How added concentrations appear for user works the same way as services and info windows.
+
+Functionality for concentrations is basically custom javascript. See file `assets/scripts/routes/lib/concentration.js`.
+
+### Bottom left buttons
+In the bottom left of the screen user can find different functions:
+- concentration time:  user can set a timer (custom javascript)
+- music (custom javascript)
+- concentrations (see above)
+- link to sanuli game
+- current bg image details
+- info button to access page info
+
+### User settings
+User can access user settings by clicking user icon in top right corner and choosing `Asetukset`.
+
+In the settings user can:
+- change current language
+- hide different elements in page
+- choose default search engine
+- choose default school, if there are multiple school ids in user_data meta key
+- choose a profile pic (empty or avatar), avatar functionality uses custom javascript with @multiavatar js-package
+
+## About interactive functionality in the page
+All interactive functionality, where user data is handled with server, is done with ajax.
+
+See file `library/hooks/ajax-helpers.php` for all ajax functionality defined in theme.
+
+
+## Server setup
 `git clone` this repo in the root of the `wp-content/themes/`-folder. This will create you a theme folder `oppijaportaali`.
 
 ## Pull the latest code and settings
@@ -6,6 +71,18 @@
 To get the latest stuff from this repo to server, execute `git pull origin master` in `wp-content/themes/oppijaportaali/`-folder.
 
 After code is pulled, see from `WP-admin => Kenttäryhmät` if there is any fields to sync.
+
+## Development installation (styles/scripts)
+
+Current setup will work with node version defined in package.json along with Yarn. Yarn should be version 1.* (development done with yarn 1.22.4).
+
+Local development domain should point to oppijaportaali.test, if you want to use `yarn start`.
+
+Needed commands to work with:
+`yarn install` ==> Install needed node packages
+`yarn start` ==> start `Webpack` to watch & rebuild on asset changes in `localhost:3000`
+`yarn prod` ==> Build for production: compresses the scripts & styles, disables sourcemaps, copies images from `assets/images` to `dist/images`
+
 
 ### Needed plugins to work properly:
 - ACF Pro
@@ -83,7 +160,18 @@ define('GOOGLE_REDIRECT_URI', 'YOUR_REDIRECT_URL');
 define('OPENSSL_IV', 'random 16 letter string');
 ```
 
+### Chat scripts
+Depending on the user's school, different chat scripts are loaded to `<head>`. This is done using wp's `wp_head`-hook to set scripts based on user's school.
+
+Logic for this is is done in `libarary/hooks/hooks.php` (look for `wp_head`). There is also helper file added, where the actual logic is: `library/hooks/apunappi-schools.pho`.
+
+
+## Notable features 
+
 ## Version history
+
+2.5 May 2025
+- apunappi chat partialy published to certain schools
 
 2.4 Nov 2024
 - added apunappi chat scripts
@@ -147,143 +235,3 @@ WHERE meta_key = 'profile_picture_visibility' AND meta_value = 'use_o365';
 
 1.0 - Dec 2020
 - First version
-  
-## Development installation/usage
-
-1. Clone the repo to WP `themes`-dir, rename the cloned dir, `cd` into and remove `.git`
-2. Run `yarn` to install front-end-depencies
-3. Run `yarn run config` to setup project
-4. Change `package.json` config-section to suit your needs:
-* `proxyUrl`: The default development URL where webpack will be proxied to
-* `entries`: Scripts & styles which will be compiled to `/dist`-folder. Each entry will be compiled with the name specified with the objects `key`.
-
-```json
-"config": {
-  "proxyUrl": "http://playground.test",
-  "entries": {
-    "main": [
-      "./scripts/main.js",
-      "./styles/main.scss"
-    ],
-    "customizer": [
-      "./scripts/customizer.js"
-    ],
-    "admin": [
-      "./admin/backend.js",
-      "./admin/backend.scss"
-    ]
-  }
-}
-```
-
-4. Run `yarn start` to start `Webpack` to watch & rebuild on asset changes
-5. To build for production, run `yarn prod` which compresses the scripts & styles, disables sourcemaps, copies images from `assets/images` to `dist/images` and creates most common favicons automatically to `icons`-subfolder.
-
-
-#### Available npm-scripts:
-* `yarn start`: Start `webpack` to browsersync `localhost:3000`
-* `yarn run prod`: Build assets for production
-* `yarn test`: Test scripts
-* `yarn run config`: Run project-config (On a fresh clone of this repo)
-
-
-## Folder Structure
-
-```
-├── 1. assets
-│   ├── admin
-│   │   ├── backend.js
-│   │   └── backend.scss
-│   ├── dist
-│   ├── fonts
-│   ├── images
-│   ├── scripts
-│   │   ├── routes
-│   │   └── util
-│   │       └── main.js
-│   ├── styles
-│   │   ├── common
-│   │   ├── components
-│   │   ├── layouts
-│   │   ├── vendor
-│   │   └── main.scss
-│   ├── webpack
-│   │   └── development.js
-│   │   └── plugins.js
-│   │   └── production.js
-│   │   └── webpack.base.js
-|
-├── 2. custom-templates
-│   ├── template.tpl.php
-|
-├── 3. library
-│   ├── acf-blocks
-│   │   ├── blocks.php
-│   ├── acf-data
-│   ├── acf-options
-│   ├── classes
-│   │   ├── Bootstrap-navwalker.php
-│   │   ├── Breadcrumbs.php
-│   │   ├── CPT-base.php
-│   │   ├── Initalization.php
-│   │   └── Utils.php
-│   ├── custom-posts
-│   ├── functions
-│   ├── hooks
-│   ├── lang
-│   └── widgets
-|
-├── 4. partials
-│   ├── blocks
-│   │   └── example-block.php
-│   ├── components
-│   ├── content-excerpt.php
-│   ├── content-page.php
-│   ├── content-search.php
-│   ├── content-single.php
-│   ├── content.php
-│   ├── no-results-404.php
-│   ├── no-results-search.php
-│   └── no-results.php
-|
-├── 5. templates
-├── .editorconfig
-├── .eslintrc
-├── .gitignore
-├── .nvmrc
-├── functions.php
-├── index.php
-├── package.json
-├── README.md
-├── screenshot
-└── style.css
-└── yarn.lock
-```
-
-**1. assets**
-Place your images, styles & javascripts here (they get smushed and build to `assets/dist`-folder on WebPack `prod`). Javascripts will be compiled to `admin.min.js` (WP-admin-scripts), `customizer.min.js` (WP Customizer js) and `main.js.min` (the main js-file).
-
-`styles`-dir is divided into smaller sections, each with it's responsibilities:
-* `blocks`: Gutenberg block styling
-* `common`: Global functions, settings, mixins & fonts
-* `components`: Single components, e.g. buttons, breadcrumbs, paginations etc.
-* `layouts`: General layouts for header, different pages, sidebar(s), footer etc.
-* `vendor`: 3rd. party components etc. which are not installed through npm.
-
-**2. custom-templates**
-* Place your WordPress [custom-templates](https://developer.wordpress.org/themes/template-files-section/page-template-files/) here.
-
-**3. library**
-* `acf-blocks` / `acf-data` / `acf-options`: ACF block registering, using ACF JSON data and creating options
-* `classes`: Holds the helper & utility-classes and is autorequired in `functions.php`
-* `custom-posts`: Place your custom posts here. See example usage in `books.php.tpl`
-* `functions`: The place for misc. helper functions
-* `hooks`: The place for WP's `hooks`, `pre_get_posts` etc.
-* `lang`: i18n for the theme
-* `widgets`: WP-nav menus & widgets
-
-**4. partials**
-Partial files used by wrappers. Place additional partial components to `components`-folder
-
-**5. templates**
-WordPress required template-files

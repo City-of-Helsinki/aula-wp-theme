@@ -16,6 +16,11 @@ if ( false === $abbrevation ) {
 	return;
 }
 
+// No rendering, if ammattikoulu
+if ( OppiSchoolPicker\is_ammattikoulu( $abbrevation ) ) {
+	return;
+}
+
 $url = OppiSchoolPicker\get_psykologi_url( $abbrevation );
 
 if ( empty( $url ) ) {

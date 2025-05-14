@@ -272,7 +272,7 @@ function oppijaportaali_block_categories( $categories, $post ) {
 	);
 }
 
-add_filter( 'block_categories', 'oppijaportaali_block_categories', 10, 2 );
+add_filter( 'block_categories_all', 'oppijaportaali_block_categories', 10, 2 );
 
 /**
  * Remove jquery-migrate from front end
@@ -412,6 +412,7 @@ add_filter(
 		$post_types[] = 'services';
 		$post_types[] = 'info-popups';
 		$post_types[] = 'concentration';
+		$post_types[] = '404-content';
 
 		return $post_types;
 	},
@@ -427,16 +428,6 @@ add_filter(
 	},
 	10,
 	2
-);
-
-/**
- * enable standalone mode on IOS Safari
- */
-wp_enqueue_script(
-	'standalone',
-	'/wp-content/themes/oppijaportaali/assets/scripts/standalone.js',
-	[],
-	oppijaportaali_theme()->get( 'Version' )
 );
 
 
@@ -544,7 +535,8 @@ add_filter( 'login_display_language_dropdown', '__return_false' );
  * Add chat script based on school
  */
 add_filter( 'wp_head', function () {
-	if ( ! is_user_logged_in() ) {
+	// show no chat if, not logged in OR is swe version in page
+	if ( ! is_user_logged_in() || pll_current_language() === 'sv' ) {
 		return;
 	}
 
@@ -555,18 +547,8 @@ add_filter( 'wp_head', function () {
 		return;
 	}
 
-	/**
-	 * Let's have some extra conditions to load apunappi, telia chat or coh chat
-	 * Apunappi only for these schools:
-	 * - Kallion lukio: KallL
-	 * - Vuosaaren lukio: VuosL
-	 * - Vuoniityn peruskoulu: VuonPK
-	 * - StadinAO Hattulantien toimipaikka: Stadin AO: K5H
-	 *
-	 * For the rest: use telia chat for other peruskoulu-users and coh chat for other lukio/ammattikoulu users
-	 */
 	if ( \OppiSchoolPicker\is_peruskoulu( $school_abbrevation ) ) {
-		if ( $school_abbrevation === 'VuonPK' ) {
+		if ( ApunappiSchools\is_apunappi_school( $school_abbrevation ) ) {
 			?>
 			<script
 				type="text/javascript"
@@ -585,24 +567,8 @@ add_filter( 'wp_head', function () {
 	}
 
 	if ( \OppiSchoolPicker\is_lukio( $school_abbrevation ) || \OppiSchoolPicker\is_ammattikoulu( $school_abbrevation ) ) {
-		// Logic to get user department
-		$user         = wp_get_current_user();
-		$department   = get_user_meta( $user->ID, 'user_department', true );
-		$k5H_included = false;
-
-		if ( ! empty( $department ) ) {
-			$exploded_string = explode( ';', $department );
-
-			// Just check, if K5H is included in department
-			foreach ( $exploded_string as $string ) {
-				if ( $string === 'K5H' ) {
-					$k5H_included = true;
-				}
-			}
-		}
-
-
-		if ( $school_abbrevation === 'KallL' || $school_abbrevation === 'VuosL' || $k5H_included === true ) {
+		// Show or not apunappi chat script
+		if ( ApunappiSchools\is_apunappi_school( $school_abbrevation ) || ApunappiSchools\user_has_apunappi_department() ) {
 			?>
 			<script
 				type="text/javascript"
@@ -619,6 +585,8 @@ add_filter( 'wp_head', function () {
 			</script>
 			<?php
 		}
+		?>
+		<?php
 	}
 } );
 

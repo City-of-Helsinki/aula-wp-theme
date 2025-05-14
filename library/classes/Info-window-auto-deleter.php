@@ -41,7 +41,8 @@ class Info_window_auto_deleter {
 					'relation' => 'AND',
 					[
 						'key'     => 'archive_date',
-						'compare' => 'EXISTS',
+						'compare' => '!=',
+						'value'   => '',
 					],
 					[
 						'key'     => 'archive_date',

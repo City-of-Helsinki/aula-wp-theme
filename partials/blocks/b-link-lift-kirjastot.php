@@ -4,6 +4,11 @@
  * Template to display kirjastot page details
  */
 
+/**
+ * CHANGE IN Apr 2025 => show kirjasto details via front page link lifts
+ */
+return;
+
 // No show, if Oppi school picker is not installed
 if ( ! in_array( 'oppi-school-picker/plugin.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
 	return;

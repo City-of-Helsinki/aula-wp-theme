@@ -16,8 +16,8 @@ if ( false === $abbrevation ) {
 	return;
 }
 
-// No rendering, if lukio
-if ( OppiSchoolPicker\is_lukio( $abbrevation ) ) {
+// No rendering, if lukio or ammattikoulu
+if ( OppiSchoolPicker\is_lukio( $abbrevation ) || OppiSchoolPicker\is_ammattikoulu( $abbrevation ) ) {
 	return;
 }
 

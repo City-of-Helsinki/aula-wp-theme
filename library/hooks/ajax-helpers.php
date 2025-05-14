@@ -64,7 +64,6 @@ function ajax_add_new_own_service() {
 	$user_id         = isset( $_POST['user_id'] ) ? wp_unslash( $_POST['user_id'] ) : null;
 
 	$service_name        = isset( $service_details['serviceName'] ) ? sanitize_text_field( $service_details['serviceName'] ) : null;
-	$service_description = isset( $service_details['serviceDescription'] ) ? sanitize_text_field( $service_details['serviceDescription'] ) : null;
 	$service_url         = isset( $service_details['serviceUrl'] ) ? esc_url_raw( $service_details['serviceUrl'] ) : null;
 	$identifier          = md5( $service_name . $service_url );
 
@@ -75,9 +74,8 @@ function ajax_add_new_own_service() {
 		'user_id'             => $user_id,
 		'service_name'        => $service_name,
 		'service_url'         => $service_url,
-		'service_description' => $service_description,
 	);
-	$format = array( '%s', '%d', '%s', '%s', '%s' );
+	$format = array( '%s', '%d', '%s', '%s' );
 	$insert = $wpdb->insert( $table, $data, $format );
 
 	if ( false !== $insert ) {

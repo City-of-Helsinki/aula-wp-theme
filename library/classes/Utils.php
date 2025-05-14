@@ -362,31 +362,33 @@ class Utils {
 
 		// Check that JSON response has been valid
 		if ( $all_services !== false ) {
-			foreach ( $all_services as $row ) {
-				$service_title       = $row->title;
-				$service_post_id     = $row->post_id;
-				$service_url         = $row->url;
-				$service_icon_url    = $row->icon_url;
-				$service_icon_alt    = $row->icon_alt;
-				$service_description = $row->description;
+			if ( is_array( $all_services ) ) {
+				foreach ( $all_services as $row ) {
+					$service_title       = $row->title;
+					$service_post_id     = $row->post_id;
+					$service_url         = $row->url;
+					$service_icon_url    = $row->icon_url;
+					$service_icon_alt    = $row->icon_alt;
+					$service_description = $row->description;
 
-				$args = [
-					'post_id'        => $service_post_id,
-					'title'          => $service_title,
-					'url'            => $service_url,
-					'description'    => $service_description,
-					'icon_url'       => $service_icon_url,
-					'icon_alt'       => $service_icon_alt,
-					'active_service' => $is_active,
-				];
+					$args = [
+						'post_id'        => $service_post_id,
+						'title'          => $service_title,
+						'url'            => $service_url,
+						'description'    => $service_description,
+						'icon_url'       => $service_icon_url,
+						'icon_alt'       => $service_icon_alt,
+						'active_service' => $is_active,
+					];
 
-				if ( true === $is_active ) {
-					if ( in_array( $row->id, $users_services ) ) {
-						get_template_part( 'partials/blocks/b-service-item', '', $args );
-					}
-				} else {
-					if ( ! in_array( $row->id, $users_services ) ) {
-						get_template_part( 'partials/blocks/b-service-item', '', $args );
+					if ( true === $is_active ) {
+						if ( in_array( $row->id, $users_services ) ) {
+							get_template_part( 'partials/blocks/b-service-item', '', $args );
+						}
+					} else {
+						if ( ! in_array( $row->id, $users_services ) ) {
+							get_template_part( 'partials/blocks/b-service-item', '', $args );
+						}
 					}
 				}
 			}
