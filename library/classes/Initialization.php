@@ -58,7 +58,7 @@ class Initialization {
 		add_filter( 'wp_title', [ $this, 'wp_title' ], 10, 2 );
 		add_filter( 'body_class', [ $this, 'add_body_classes' ] );
 		add_filter( 'wp_page_menu_args', [ $this, 'page_menu_args' ] );
-		add_action( 'admin_init', [ $this, 'is_htaccess_writable' ] );
+		//add_action( 'admin_init', [ $this, 'is_htaccess_writable' ] );
 		add_action( 'generate_rewrite_rules', [ $this, 'add_h5bp_htaccess' ] );
 
 		// Remove WP-API link from head if any
@@ -451,6 +451,7 @@ class Initialization {
 	/**
 	 * Show an admin notice if .htaccess isn't writable
 	 */
+	/*
 	function is_htaccess_writable() {
 		if ( ! is_writable( get_home_path() . '.htaccess' ) && strpos( strtolower( $_SERVER['SERVER_SOFTWARE'] ),
 				'apache' ) !== false
@@ -462,7 +463,7 @@ class Initialization {
 			}
 		}
 	}
-
+	*/
 	/**
 	 * Add HTML5 Boilerplate's .htaccess via WordPress
 	 */
