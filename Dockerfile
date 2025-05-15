@@ -1,7 +1,7 @@
 FROM helsinki.azurecr.io/openshift-wordpress-base:latest
 
 # Replace wp-config.php with a custom version
-COPY --chmod=0664 .user.ini wp-config.php wordfence-waf.php /opt/app-root/src/
+COPY --chmod=0664 .user.ini wordfence-waf.php /opt/app-root/src/
 
 ARG MOUNT_SECRET="false"
 ARG COMPOSER_AUTH="{}"
