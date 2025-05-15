@@ -1,3 +1,4 @@
+<?php
 /**
   * Aula env variables
  */
