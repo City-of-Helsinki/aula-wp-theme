@@ -1,7 +1,6 @@
 FROM helsinki.azurecr.io/openshift-wordpress-base:latest
 
 COPY .user.ini wordfence-waf.php /opt/app-root/src/
-COPY config/custom.php /opt/app-root/src/config/
 
 ARG MOUNT_SECRET="false"
 ARG COMPOSER_AUTH="{}"
