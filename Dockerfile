@@ -20,6 +20,8 @@ RUN composer config repositories.oppijaportaali vcs https://github.com/City-of-H
     composer require city-of-helsinki/oppi-school-picker && \
     composer config repositories.advanced-custom-fields-pro vcs https://github.com/City-of-Helsinki/wordpress-helfi-plugin-advanced-custom-fields-pro && \
     composer require acf/advanced-custom-fields-pro && \
+    composer config repositories.wpo-365-login-intranet vcs https://github.com/City-of-Helsinki/wordpress-helfi-plugin-wpo365-intranet && \
+    composer require wpo365/wpo365-login-intranet && \
     composer config repositories.wpackagist composer https://wpackagist.org && \
     composer require wpackagist-plugin/wp-piwik && \
     composer require wpackagist-plugin/polylang:3.6.7 && \
