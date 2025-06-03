@@ -28,6 +28,7 @@ RUN composer config repositories.oppijaportaali vcs https://github.com/City-of-H
     composer require wpackagist-plugin/simple-page-ordering:2.7.3 && \
     composer require wpackagist-plugin/wpo365-login:36.0 && \
     composer require wpackagist-plugin/wpo365-samesite:1.5 && \
+    composer require wpackagist-plugin/wp-mail-smtp:4.4.0 && \
     composer config repositories.wpo-365-login-intranet vcs https://github.com/City-of-Helsinki/wordpress-helfi-plugin-wpo365-login-intranet && \
     composer require wpo365/wpo365-login-intranet && \
     rm -f /opt/app-root/src/.config/composer/auth.json
