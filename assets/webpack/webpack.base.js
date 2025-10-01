@@ -66,7 +66,7 @@ module.exports = {
             loader: 'babel-loader',
             options: {
               presets: [
-                [path.resolve('./node_modules/babel-preset-es2015'), { modules: false }]
+                [path.resolve('./node_modules/@babel/preset-env'), { modules: false }]
               ],
               cacheDirectory: true
             }
