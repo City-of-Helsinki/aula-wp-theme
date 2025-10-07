@@ -14,6 +14,7 @@ ARG WP_PLUGIN_VERSION_WPO365_LOGIN=""
 ARG WP_PLUGIN_VERSION_WPO365_SAMESITE=""
 ARG WP_PLUGIN_VERSION_WP_MAIL_SMTP=""
 ARG WP_PLUGIN_VERSION_WP_SENTRY_INTEGRATION=""
+ARG WP_PLUGIN_VERSION_WP_SECURITY_AUDIT_LOG=""
 
 RUN mkdir -m 777 /tmp/wflogs
 
@@ -40,6 +41,7 @@ RUN composer config repositories.oppijaportaali vcs https://github.com/City-of-H
     composer require wpackagist-plugin/wpo365-samesite:$WP_PLUGIN_VERSION_WPO365_SAMESITE && \
     composer require wpackagist-plugin/wp-mail-smtp:$WP_PLUGIN_VERSION_WP_MAIL_SMTP && \
     composer require wpackagist-plugin/wp-sentry-integration:$WP_PLUGIN_VERSION_WP_SENTRY_INTEGRATION && \
+    composer require wpackagist-plugin/wp-security-audit-log:$WP_PLUGIN_VERSION_WP_SECURITY_AUDIT_LOG && \
     composer config repositories.wpo-365-login-intranet vcs https://github.com/City-of-Helsinki/wordpress-helfi-plugin-wpo365-login-intranet && \
     composer require wpo365/wpo365-login-intranet && \
     rm -f /opt/app-root/src/.config/composer/auth.json
