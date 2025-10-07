@@ -273,14 +273,14 @@ class Utils {
 	}
 
 	function get_helsinki_home_url() {
-		$url = 'https://www.hel.fi/kasvatuksen-ja-koulutuksen-toimiala/fi';
+		$url = 'https://www.hel.fi/fi/kasvatus-ja-koulutus';
 
 		if ( pll_current_language() === 'sv' ) {
-			$url = 'https://www.hel.fi/kasvatuksen-ja-koulutuksen-toimiala/sv';
+			$url = 'https://www.hel.fi/sv/fostran-och-utbildning';
 		}
 
 		if ( pll_current_language() === 'en' ) {
-			$url = 'https://www.hel.fi/kasvatuksen-ja-koulutuksen-toimiala/en';
+			$url = 'https://www.hel.fi/en/childhood-and-education';
 		}
 
 		return $url;
@@ -409,15 +409,7 @@ class Utils {
 			return false;
 		}
 
-		$user     = wp_get_current_user();
-		$user_id  = $user->ID;
-		$url_path = O365_PROFILE_IMG_PATH . $user_id . '.png';
-
-		if ( $this->does_url_exists( $url_path ) ) {
-			return $url_path;
-		} else {
-			return false;
-		}
+		return false;
 	}
 
 	function does_url_exists( $url ) {
