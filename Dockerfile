@@ -25,7 +25,7 @@ RUN mkdir -p /opt/app-root/src/.config/composer && \
     fi
 
 RUN composer config repositories.oppijaportaali vcs https://github.com/City-of-Helsinki/aula-wp-theme && \
-    composer require city-of-helsinki/oppijaportaali && \
+    composer require city-of-helsinki/oppijaportaali:dev-dev && \
     composer config repositories.oppi-school-picker vcs https://github.com/City-of-Helsinki/wordpress-helfi-plugin-oppi-school-picker && \
     composer require city-of-helsinki/oppi-school-picker && \
     composer config repositories.advanced-custom-fields-pro vcs https://github.com/City-of-Helsinki/wordpress-helfi-plugin-advanced-custom-fields-pro && \
