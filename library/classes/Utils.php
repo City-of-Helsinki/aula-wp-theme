@@ -250,6 +250,38 @@ class Utils {
 		return $meta;
 	}
 
+	/**
+	 * User language data
+	 *
+	 * @return mixed|string|void
+	 */
+	function user_lang_data() {
+		$output = '';
+		$is_swe = false;
+
+		if ( ! is_user_logged_in() ) {
+			return $output;
+		}
+
+		// Get default user locale from WP profile settings
+		$user_locale = get_user_locale();
+
+		$user_school = esc_attr(Utils()->get_user_data_meta());
+
+		if ( ! empty( $user_school ) ) {
+			$is_swe = \OppiSchoolPicker\is_ruotsinkielinen( $user_school );
+		}
+
+		// If school is swedish, set user locale to 'sv';
+		if ( $is_swe ) {
+			$user_locale = 'sv';
+		}
+
+		$output = $user_locale;
+
+		return $output;
+	}
+
 	function get_user_data_meta_no_aakkoset() {
 
 		if ( ! is_user_logged_in() ) {
