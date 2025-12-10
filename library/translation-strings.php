@@ -75,6 +75,7 @@ return [
 	'hide_drive'                         => 'Piilota Drive',
 	'hide_classroom'                     => 'Piilota Classroom',
 	'page_settings'                      => 'Sivun asetukset',
+	'search_engine'						 => 'Hakukone',
 	'welcome_note'                       => 'Hi %s! Today is %s and the time is',
 	'image_info'                         => 'Kuvan tiedot',
 	'close_details'                      => 'Sulje tiedot',
