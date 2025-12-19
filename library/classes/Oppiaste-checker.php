@@ -33,6 +33,10 @@ class Oppiaste_checker {
 	 * @return int|null Value of oppiaste data, if found
 	 */
 	public static function get_oppiaste_value( $user_grade ): ?int {
+        if ( (int) $user_grade ) {
+            return $user_grade;
+        }
+
         if ( empty( $user_grade ) ) {
             return null;
         }
