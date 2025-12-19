@@ -17,12 +17,14 @@ class Oppiaste_checker {
 	 * @var WP_User|null WP_User object or null if not logged in
 	 */
 	public static $current_user;
+    public static $user_grade;
 
 	/**
 	 * Oppiaste_checker constructor.
 	 */
 	public function __construct() {
 		self::$current_user = wp_get_current_user();
+        self::$user_grade = get_user_meta( self::$current_user->ID, self::$meta_key, true );
 	}
 
 	/**
@@ -30,10 +32,24 @@ class Oppiaste_checker {
 	 *
 	 * @return int|null Value of oppiaste data, if found
 	 */
-	public static function get_oppiaste_value() {
-		$value = ! empty( get_user_meta( self::$current_user->ID, self::$meta_key, true ) ) ? (int) get_user_meta( self::$current_user->ID, self::$meta_key, true ) : null;
+	public static function get_oppiaste_value( $user_grade ): ?int {
+        if ( empty( $user_grade ) ) {
+            return null;
+        }
 
-		return $value;
+        if ( is_numeric( $user_grade ) ) {
+            return (int) $user_grade;
+        }
+
+        // Parsing all non-numerals out of the string ($user_grade can be L1;L3 for example)
+        preg_match_all('/\d+/', (string) $user_grade, $matches);
+
+        if ( empty( $matches[0] ) ) {
+            return null;
+        }
+
+        // Get the highest number
+        return max( array_map('intval', $matches[0]) );
 	}
 
 	/**
@@ -134,7 +150,7 @@ class Oppiaste_checker {
 	}
 
 	private static function is_peruskoulu_1() {
-		$oppiaste = self::get_oppiaste_value();
+		$oppiaste = self::get_oppiaste_value( self::$user_grade );
 
 		if ( null === $oppiaste ) {
 			return false;
@@ -148,7 +164,7 @@ class Oppiaste_checker {
 	}
 
 	private static function is_peruskoulu_2() {
-		$oppiaste = self::get_oppiaste_value();
+		$oppiaste = self::get_oppiaste_value( self::$user_grade);
 
 		if ( null === $oppiaste ) {
 			return false;
@@ -162,7 +178,7 @@ class Oppiaste_checker {
 	}
 
 	private static function is_peruskoulu_3() {
-		$oppiaste = self::get_oppiaste_value();
+		$oppiaste = self::get_oppiaste_value( self::$user_grade);
 
 		if ( null === $oppiaste ) {
 			return false;
@@ -176,7 +192,7 @@ class Oppiaste_checker {
 	}
 
 	private static function is_peruskoulu_4() {
-		$oppiaste = self::get_oppiaste_value();
+		$oppiaste = self::get_oppiaste_value( self::$user_grade);
 
 		if ( null === $oppiaste ) {
 			return false;
@@ -190,7 +206,7 @@ class Oppiaste_checker {
 	}
 
 	private static function is_peruskoulu_5() {
-		$oppiaste = self::get_oppiaste_value();
+		$oppiaste = self::get_oppiaste_value( self::$user_grade);
 
 		if ( null === $oppiaste ) {
 			return false;
@@ -204,7 +220,7 @@ class Oppiaste_checker {
 	}
 
 	private static function is_peruskoulu_6() {
-		$oppiaste = self::get_oppiaste_value();
+		$oppiaste = self::get_oppiaste_value( self::$user_grade);
 
 		if ( null === $oppiaste ) {
 			return false;
@@ -218,7 +234,7 @@ class Oppiaste_checker {
 	}
 
 	private static function is_peruskoulu_7() {
-		$oppiaste = self::get_oppiaste_value();
+		$oppiaste = self::get_oppiaste_value( self::$user_grade);
 
 		if ( null === $oppiaste ) {
 			return false;
@@ -232,7 +248,7 @@ class Oppiaste_checker {
 	}
 
 	private static function is_peruskoulu_8() {
-		$oppiaste = self::get_oppiaste_value();
+		$oppiaste = self::get_oppiaste_value( self::$user_grade);
 
 		if ( null === $oppiaste ) {
 			return false;
@@ -246,7 +262,7 @@ class Oppiaste_checker {
 	}
 
 	private static function is_peruskoulu_9() {
-		$oppiaste = self::get_oppiaste_value();
+		$oppiaste = self::get_oppiaste_value( self::$user_grade);
 
 		if ( null === $oppiaste ) {
 			return false;
@@ -260,7 +276,7 @@ class Oppiaste_checker {
 	}
 
 	private static function is_peruskoulu_10() {
-		$oppiaste = self::get_oppiaste_value();
+		$oppiaste = self::get_oppiaste_value( self::$user_grade);
 
 		if ( null === $oppiaste ) {
 			return false;
@@ -274,7 +290,7 @@ class Oppiaste_checker {
 	}
 
 	private static function is_lukio_1() {
-		$oppiaste = self::get_oppiaste_value();
+		$oppiaste = self::get_oppiaste_value( self::$user_grade);
 
 		if ( null === $oppiaste ) {
 			return false;
@@ -288,7 +304,7 @@ class Oppiaste_checker {
 	}
 
 	private static function is_lukio_2() {
-		$oppiaste = self::get_oppiaste_value();
+		$oppiaste = self::get_oppiaste_value( self::$user_grade);
 
 		if ( null === $oppiaste ) {
 			return false;
@@ -302,7 +318,7 @@ class Oppiaste_checker {
 	}
 
 	private static function is_lukio_3() {
-		$oppiaste = self::get_oppiaste_value();
+		$oppiaste = self::get_oppiaste_value( self::$user_grade);
 
 		if ( null === $oppiaste ) {
 			return false;
@@ -316,7 +332,8 @@ class Oppiaste_checker {
 	}
 
 	private static function is_lukio_4() {
-		$oppiaste = self::get_oppiaste_value();
+		$oppiaste = self::get_oppiaste_value( self::$user_grade);
+//        var_dump( $oppiaste );
 
 		if ( null === $oppiaste ) {
 			return false;
