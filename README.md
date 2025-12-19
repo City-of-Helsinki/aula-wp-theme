@@ -165,6 +165,8 @@ Depending on the user's school, different chat scripts are loaded to `<head>`. T
 
 Logic for this is is done in `libarary/hooks/hooks.php` (look for `wp_head`). There is also helper file added, where the actual logic is: `library/hooks/apunappi-schools.pho`.
 
+### Unit tests
+Unit tests can be run from the theme base folder, for example: `./vendor/bin/phpunit tests/OppiasteCheckerTest.php`
 
 ## Notable features 
 
