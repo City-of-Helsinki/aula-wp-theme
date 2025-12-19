@@ -33,12 +33,12 @@ class Oppiaste_checker {
 	 * @return int|null Value of oppiaste data, if found
 	 */
 	public static function get_oppiaste_value( $user_grade ): ?int {
-        if ( (int) $user_grade ) {
-            return $user_grade;
-        }
-
         if ( empty( $user_grade ) ) {
             return null;
+        }
+
+        if ( is_numeric( $user_grade ) ) {
+            return (int) $user_grade;
         }
 
         // Parsing all non-numerals out of the string, example: "L1;L3" => "13"
@@ -49,13 +49,7 @@ class Oppiaste_checker {
         }
 
         // If we have a string of numbers, get the highest number "13" => 3
-        $user_grade = (int) max( str_split( $user_grade ) );
-
-        if ( ! $user_grade ) {
-            return null;
-        }
-
-        return $user_grade;
+        return (int) max( str_split( $user_grade ) );
 	}
 
 	/**
