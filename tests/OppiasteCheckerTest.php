@@ -1,11 +1,8 @@
 <?php
 
-namespace LuuptekWP\tests;
-
-use Oppiaste_checker;
 use PHPUnit\Framework\TestCase;
 
-require_once __DIR__ . '/../Oppiaste-checker.php';
+require_once __DIR__ . '/../library/classes/Oppiaste-checker.php';
 
 class OppiasteCheckerTest extends TestCase
 {
