@@ -41,15 +41,15 @@ class Oppiaste_checker {
             return (int) $user_grade;
         }
 
-        // Parsing all non-numerals out of the string, example: "L1;L3" => "13"
-        $user_grade = preg_replace('/\D/', '', (string) $user_grade);
+        // Parsing all non-numerals out of the string ($user_grade can be L1;L3 for example)
+        preg_match_all('/\d+/', (string) $user_grade, $matches);
 
-        if ( $user_grade === '' ) {
+        if ( empty( $matches[0] ) ) {
             return null;
         }
 
-        // If we have a string of numbers, get the highest number "13" => 3
-        return (int) max( str_split( $user_grade ) );
+        // Get the highest number
+        return max( array_map('intval', $matches[0]) );
 	}
 
 	/**
