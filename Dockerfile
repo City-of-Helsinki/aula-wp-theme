@@ -15,6 +15,7 @@ ARG WP_PLUGIN_VERSION_WPO365_SAMESITE=""
 ARG WP_PLUGIN_VERSION_WP_MAIL_SMTP=""
 ARG WP_PLUGIN_VERSION_WP_SENTRY_INTEGRATION=""
 ARG WP_PLUGIN_VERSION_WP_SECURITY_AUDIT_LOG=""
+ARG WP_PLUGIN_VERSION_ACTIVITY_LOG=""
 
 RUN mkdir -m 777 /tmp/wflogs
 
@@ -30,6 +31,8 @@ RUN composer config repositories.oppijaportaali vcs https://github.com/City-of-H
     composer require city-of-helsinki/oppi-school-picker && \
     composer config repositories.advanced-custom-fields-pro vcs https://github.com/City-of-Helsinki/wordpress-helfi-plugin-advanced-custom-fields-pro && \
     composer require acf/advanced-custom-fields-pro && \
+    composer config repositories.activity-log vcs https://github.com/City-of-Helsinki/wordpress-helfi-plugin-activity-log && \
+    composer require city-of-helsinki/activity-log:$WP_PLUGIN_VERSION_ACTIVITY_LOG && \
     composer config repositories.wpackagist composer https://wpackagist.org && \
     composer require wpackagist-plugin/wp-piwik:$WP_PLUGIN_VERSION_CONNECT_MATOMO && \
     composer require wpackagist-plugin/polylang:$WP_PLUGIN_VERSION_POLYLANG && \
