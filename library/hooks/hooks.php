@@ -542,10 +542,7 @@ add_filter( 'wp_head', function () {
 
 	$school_abbrevation = UTILS()->get_user_data_meta();
 
-	// Only load chat if use is from peruskoulu, lukio or ammattikoulu
-	if ( ! \OppiSchoolPicker\is_lukio( $school_abbrevation ) && ! \OppiSchoolPicker\is_ammattikoulu( $school_abbrevation ) && ! \OppiSchoolPicker\is_peruskoulu( $school_abbrevation ) ) {
-		return;
-	}
+	
 
 	if ( \OppiSchoolPicker\is_peruskoulu( $school_abbrevation ) ) {
 		if ( ApunappiSchools\is_apunappi_school( $school_abbrevation ) ) {
@@ -579,11 +576,6 @@ add_filter( 'wp_head', function () {
 		} else {
 			?>
 			<!-- Shows wrong kind of chatbot, remove for now.
-			<script
-				type="text/javascript"
-				id="wbc-widget-button"
-				src="https://coh-chat-app-prod.ow6i4n9pdzm.eu-de.codeengine.appdomain.cloud/get-widget-button?tenantId=sote-test&assistantId=sote-bot&engagementId=sote-bot-nuorten">
-			</script>
 			-->
 			<?php
 		}
