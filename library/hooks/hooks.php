@@ -542,7 +542,10 @@ add_filter( 'wp_head', function () {
 
 	$school_abbrevation = UTILS()->get_user_data_meta();
 
-	
+	// Only load chat if use is from peruskoulu, lukio or ammattikoulu
+	if ( ! \OppiSchoolPicker\is_lukio( $school_abbrevation ) && ! \OppiSchoolPicker\is_ammattikoulu( $school_abbrevation ) && ! \OppiSchoolPicker\is_peruskoulu( $school_abbrevation ) ) {
+		return;
+	}
 
 	if ( \OppiSchoolPicker\is_peruskoulu( $school_abbrevation ) ) {
 		if ( ApunappiSchools\is_apunappi_school( $school_abbrevation ) ) {
