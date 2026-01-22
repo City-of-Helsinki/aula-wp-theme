@@ -535,6 +535,14 @@ add_filter( 'login_display_language_dropdown', '__return_false' );
  * Add chat script based on school
  */
 add_filter( 'wp_head', function () {
+	?>
+	<script
+				type="text/javascript"
+				id="wbc-widget-button"
+				src="https://coh-chat-app-prod.ow6i4n9pdzm.eu-de.codeengine.appdomain.cloud/get-widget-button?tenantId=sote-prod&assistantId=sote-bot&engagementId=sote-bot-nuorten">
+			</script>
+	<?php
+
 	// show no chat if, not logged in OR is swe version in page
 	if ( ! is_user_logged_in() || pll_current_language() === 'sv' ) {
 		return;
@@ -578,11 +586,13 @@ add_filter( 'wp_head', function () {
 			<?php
 		} else {
 			?>
+			<!-- Shows wrong kind of chatbot, remove for now.
 			<script
 				type="text/javascript"
 				id="wbc-widget-button"
 				src="https://coh-chat-app-prod.ow6i4n9pdzm.eu-de.codeengine.appdomain.cloud/get-widget-button?tenantId=sote-prod&assistantId=sote-bot&engagementId=sote-bot-nuorten">
 			</script>
+			-->
 			<?php
 		}
 		?>
