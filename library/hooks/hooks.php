@@ -578,11 +578,13 @@ add_filter( 'wp_head', function () {
 			<?php
 		} else {
 			?>
+			<!-- Shows wrong kind of chatbot, remove for now.
 			<script
 				type="text/javascript"
 				id="wbc-widget-button"
 				src="https://coh-chat-app-prod.ow6i4n9pdzm.eu-de.codeengine.appdomain.cloud/get-widget-button?tenantId=sote-test&assistantId=sote-bot&engagementId=sote-bot-nuorten">
 			</script>
+			-->
 			<?php
 		}
 		?>
