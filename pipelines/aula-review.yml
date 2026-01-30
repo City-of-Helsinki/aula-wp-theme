@@ -38,6 +38,7 @@ resources:
     # Azure DevOps repository
     - repository: aula-pipelines
       type: git
+      ref: review_PSD-7764
       # Azure DevOps project/repository
       name: aula/aula-pipelines
 
