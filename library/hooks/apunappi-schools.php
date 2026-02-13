@@ -123,5 +123,16 @@ function get_apunappi_schools_array() {
 		'VartY',       // Vartiokylän yläasteen koulu
 		'VesaPK',      // Vesalan peruskoulu
 		'VuonPK',      // Vuoniityn peruskoulu
+
+		// Ruotsinkieliset lukiot
+		'BRG',         // Brändö Gymnasium
+		'GLÄ',         // Gymnasiet Lärkan
+		'TGM',         // Tölö Gymnasium
+
+		// Ruotsinkieliset peruskoulut
+		'BOG',         // Botby grundskola
+		'GRN',         // Grundskolan Norsen
+		'HOG',         // Hoplaxskolan
+		'KOL',         // Kottby grundskola
 	];
 }
