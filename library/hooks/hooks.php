@@ -535,6 +535,7 @@ add_filter( 'login_display_language_dropdown', '__return_false' );
  * Add chat script based on school
  */
 add_filter( 'wp_head', function () {
+
 	// show no chat if, not logged in OR is swe version in page
 	if ( ! is_user_logged_in() ) {
 		return;

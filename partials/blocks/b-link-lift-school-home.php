@@ -46,6 +46,7 @@ if ( false === $school_name ) {
 				</h3>
 				<p class="link-lift-item__description">
 					<?php echo esc_html( $school_name ); ?>
+					<?php echo '<br>' . esc_html( $abbrevation ); ?>
 				</p>
 			</div>
 		</div>
