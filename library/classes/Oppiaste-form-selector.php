@@ -58,6 +58,16 @@ class Oppiaste_form_section {
 	}
 
 	public static function get_different_schools_array() {
+
+		// Skip SAOKampus schools
+		$saokampus = [
+			'SAOKampus1',
+			'SAOKampus2',
+			'SAOKampus3',
+			'SAOKampus4',
+			'SAOKampus5'
+		];
+
 		$user_data = get_user_meta( get_current_user_id(), 'user_data', true );
 
 		if ( ! $user_data ) {
@@ -76,7 +86,9 @@ class Oppiaste_form_section {
 			$school_name = OppiSchoolPicker\get_school_name( $string );
 
 			if ( $school_name ) {
-				$array[ $string ] = $school_name;
+				if ( ! in_array( $string, $saokampus ) ) {
+					$array[ $string ] = $school_name;
+				}
 			}
 		}
 
