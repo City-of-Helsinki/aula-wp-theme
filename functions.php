@@ -381,3 +381,28 @@ function hide_nickname_field_css() {
 add_action( 'admin_head-user-edit.php', 'hide_nickname_field_css' );
 
 add_action( 'admin_head-profile.php',   'hide_nickname_field_css' );
+
+// Save oppiaste when theme loads.
+// Only if there are less than 2 schools available for the user.
+add_action( 'after_setup_theme', 'save_oppiaste' );
+
+function save_oppiaste() {
+
+	if ( is_user_logged_in() ) {
+
+		$custom_school = get_user_meta( get_current_user_id(), \Oppiaste_form_section::$custom_user_meta_key, true );
+
+		if ( empty( $custom_school ) ) {
+
+			$schools = \Oppiaste_form_section::get_different_schools_array();
+
+			// If there are only one school set, update custom school as the first key that can be found from array
+			if ( count( $schools ) < 2 ) {
+				$firstSchool = array_key_first( $schools );
+				update_user_meta( get_current_user_id(), \Oppiaste_form_section::$custom_user_meta_key, $firstSchool );
+			}
+
+		}
+	}
+
+}
