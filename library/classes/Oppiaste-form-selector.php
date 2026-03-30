@@ -18,6 +18,8 @@ class Oppiaste_form_section {
 
 		$schools = self::get_different_schools_array();
 
+		var_dump( $schools );
+
 		if ( count( $schools ) < 2 ) {
 			return;
 		}
