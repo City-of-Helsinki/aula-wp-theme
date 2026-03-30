@@ -18,8 +18,6 @@ class Oppiaste_form_section {
 
 		$schools = self::get_different_schools_array();
 
-		var_dump( $schools );
-
 		if ( count( $schools ) < 2 ) {
 			return;
 		}
@@ -113,7 +111,9 @@ class Oppiaste_form_section {
 			$school_name = OppiSchoolPicker\get_school_name( $string );
 
 			if ( $school_name ) {
-				$array[ $string ] = $school_name;
+				if ( ! in_array( $string, $saokampus ) ) {
+					$array[ $string ] = $school_name;
+				}
 			}
 		}
 
