@@ -396,12 +396,9 @@ function save_oppiaste() {
 
 			$schools = \Oppiaste_form_section::get_different_schools_array();
 
-			// If there are only one school set, update custom school as the first key that can be found from array
-			if ( count( $schools ) < 2 ) {
-				$firstSchool = array_key_first( $schools );
-				update_user_meta( get_current_user_id(), \Oppiaste_form_section::$custom_user_meta_key, $firstSchool );
-			}
-
+			// Set the first school from array so user has a default school selected automatically
+			$firstSchool = array_key_first( $schools );
+			update_user_meta( get_current_user_id(), \Oppiaste_form_section::$custom_user_meta_key, $firstSchool );
 		}
 	}
 

@@ -40,8 +40,10 @@ class Oppiaste_form_section {
 					<?php pll_esc_html_e( 'Aseta oletuskoulusi' ); ?>
 				</label>
 				<select id="oppiaste-custom-selection" class="update-user-settings-form__form-field">
+					<?php if ( empty( $custom_school ) ) { ?>
 					<option
 						value="empty"<?php echo $custom_selected ? '' : ' selected' ?>><?php pll_esc_html_e( 'Ei valintaa' ); ?></option>
+					<?php } ?>
 					<?php
 					foreach ( $schools as $key => $value ) {
 						$selected = ( $key === $custom_school );
