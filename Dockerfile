@@ -17,6 +17,7 @@ ARG WP_PLUGIN_VERSION_WP_SENTRY_INTEGRATION=""
 ARG WP_PLUGIN_VERSION_WP_SECURITY_AUDIT_LOG=""
 ARG WP_PLUGIN_VERSION_OPPI_SCHOOL_PICKER=""
 ARG WP_PLUGIN_VERSION_ACTIVITY_LOG=""
+ARG WP_PLUGIN_VERSION_SUPER_PWA=""
 
 RUN mkdir -m 777 /tmp/wflogs
 
@@ -35,7 +36,7 @@ RUN composer config repositories.oppijaportaali vcs https://github.com/City-of-H
     composer config repositories.activity-log vcs https://github.com/City-of-Helsinki/wordpress-helfi-plugin-activity-log && \
     composer require city-of-helsinki/activity-log:$WP_PLUGIN_VERSION_ACTIVITY_LOG && \
     composer config repositories.superpwa git https://github.com/SuperPWA/super-progressive-web-apps && \
-    composer require superpwa/super-progressive-web-apps:2.1.2 && \
+    composer require superpwa/super-progressive-web-apps:$WP_PLUGIN_VERSION_SUPER_PWA && \
     composer config repositories.wpackagist composer https://wpackagist.org && \
     composer require wpackagist-plugin/wp-piwik:$WP_PLUGIN_VERSION_CONNECT_MATOMO && \
     composer require wpackagist-plugin/polylang:$WP_PLUGIN_VERSION_POLYLANG && \
