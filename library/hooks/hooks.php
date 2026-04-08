@@ -537,7 +537,7 @@ add_filter( 'login_display_language_dropdown', '__return_false' );
 add_filter( 'wp_head', function () {
 
 	// show no chat if, not logged in OR is swe version in page
-	if ( ! is_user_logged_in() || pll_current_language() === 'sv' ) {
+	if ( ! is_user_logged_in() ) {
 		return;
 	}
 
@@ -548,13 +548,17 @@ add_filter( 'wp_head', function () {
 		return;
 	}
 
+	?>
+
+	<?php
+
 	if ( \OppiSchoolPicker\is_peruskoulu( $school_abbrevation ) ) {
 		if ( ApunappiSchools\is_apunappi_school( $school_abbrevation ) ) {
 			?>
 			<script
 				type="text/javascript"
 				id="wbc-widget-button"
-				src="https://coh-chat-app-prod.ow6i4n9pdzm.eu-de.codeengine.appdomain.cloud/get-widget-button?tenantId=sote-prod&assistantId=apunappi&engagementId=apunappi">
+				src="https://coh-chat-app-prod.ow6i4n9pdzm.eu-de.codeengine.appdomain.cloud/get-widget-button?tenantId=sote-test&assistantId=apunappi&engagementId=apunappi">
 			</script>
 			<?php
 		} else {
@@ -574,7 +578,7 @@ add_filter( 'wp_head', function () {
 			<script
 				type="text/javascript"
 				id="wbc-widget-button"
-				src="https://coh-chat-app-prod.ow6i4n9pdzm.eu-de.codeengine.appdomain.cloud/get-widget-button?tenantId=sote-prod&assistantId=apunappi&engagementId=apunappi-toinen">
+				src="https://coh-chat-app-prod.ow6i4n9pdzm.eu-de.codeengine.appdomain.cloud/get-widget-button?tenantId=sote-test&assistantId=apunappi&engagementId=apunappi-toinen">
 			</script>
 			<?php
 		} else {

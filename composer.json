@@ -1,4 +1,7 @@
 {
 	"name": "city-of-helsinki/oppijaportaali",
-	"type": "wordpress-theme"
+	"type": "wordpress-theme",
+	"require-dev": {
+		"phpunit/phpunit": "^11.5"
+	}
 }

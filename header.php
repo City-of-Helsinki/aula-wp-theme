@@ -9,7 +9,7 @@
 ?>
 
 <!doctype html>
-<html class="no-js" data-user-school-rest="<?php echo esc_attr(Utils()->get_user_data_meta_no_aakkoset()); ?>" data-user-school="<?php echo esc_attr(Utils()->get_user_data_meta()); ?>" <?php language_attributes(); ?>>
+<html class="no-js" data-user-school-rest="<?php echo esc_attr(Utils()->get_user_data_meta_no_aakkoset()); ?>" data-user-school="<?php echo esc_attr(Utils()->get_user_data_meta()); ?>" data-language-user="<?php echo esc_attr(Utils()->user_lang_data()); ?>" <?php language_attributes(); ?>>
 <head>
 
 	<meta charset="<?php echo get_bloginfo( 'charset' ); ?>"/>
