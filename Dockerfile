@@ -35,10 +35,9 @@ RUN composer config repositories.oppijaportaali vcs https://github.com/City-of-H
     composer require acf/advanced-custom-fields-pro && \
     composer config repositories.activity-log vcs https://github.com/City-of-Helsinki/wordpress-helfi-plugin-activity-log && \
     composer require city-of-helsinki/activity-log:$WP_PLUGIN_VERSION_ACTIVITY_LOG && \
-    composer config repositories.superpwa git https://github.com/SuperPWA/super-progressive-web-apps && \
-    composer require superpwa/super-progressive-web-apps:$WP_PLUGIN_VERSION_SUPER_PWA && \
     composer config repositories.wpackagist composer https://wpackagist.org && \
     composer require wpackagist-plugin/wp-piwik:$WP_PLUGIN_VERSION_CONNECT_MATOMO && \
+    composer require wpackagist-plugin/super-progressive-web-apps:$WP_PLUGIN_VERSION_SUPER_PWA && \
     composer require wpackagist-plugin/polylang:$WP_PLUGIN_VERSION_POLYLANG && \
     composer require wpackagist-plugin/wordfence:$WP_PLUGIN_VERSION_WORDFENCE && \
     composer require wpackagist-plugin/remove-dashboard-access-for-non-admins:$WP_PLUGIN_VERSION_REMOVE_DASHBOARD_ACCESS && \
