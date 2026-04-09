@@ -558,6 +558,7 @@ add_filter( 'wp_head', function () {
 			<script
 				type="text/javascript"
 				id="wbc-widget-button"
+				class="wbc-widget-button-script"
 				src="https://coh-chat-app-prod.ow6i4n9pdzm.eu-de.codeengine.appdomain.cloud/get-widget-button?tenantId=sote-prod&assistantId=apunappi&engagementId=apunappi">
 			</script>
 			<?php
@@ -578,6 +579,7 @@ add_filter( 'wp_head', function () {
 			<script
 				type="text/javascript"
 				id="wbc-widget-button"
+				class="wbc-widget-button-script"
 				src="https://coh-chat-app-prod.ow6i4n9pdzm.eu-de.codeengine.appdomain.cloud/get-widget-button?tenantId=sote-prod&assistantId=apunappi&engagementId=apunappi-toinen">
 			</script>
 			<?php
