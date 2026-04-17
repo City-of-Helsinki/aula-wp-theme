@@ -574,6 +574,9 @@ add_filter( 'wp_head', function () {
 	if ( \OppiSchoolPicker\is_lukio( $school_abbrevation ) || \OppiSchoolPicker\is_ammattikoulu( $school_abbrevation ) ) {
 		// Show or not apunappi chat script
 		if ( ApunappiSchools\is_apunappi_school( $school_abbrevation ) || ApunappiSchools\user_has_apunappi_department() ) {
+			var_dump( ApunappiSchools\is_apunappi_school( $school_abbrevation ) );
+			var_dump( $school_abbrevation );
+			var_dump( ApunappiSchools\user_has_apunappi_department() );
 			?>
 			<script
 				type="text/javascript"
