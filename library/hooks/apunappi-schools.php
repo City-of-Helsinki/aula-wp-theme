@@ -56,8 +56,11 @@ function get_apunappi_schools_array() {
 		'K2I', // Ilkantien toimipaikka
 		'K3K', // Kullervonkadun toimipaikka
 		'K2M', // Meritalon toimipaikka
+		'K2MU',
 		'K3M', // Muotoilijankadun toimipaikka
+		'K3MU',
 		'K4M', // Myllypuron toimipaikka
+		'K4MU',
 		'K3P', // Prinsessantien toimipaikka
 		'K2S', // Savonkadun toimipaikka
 		'K5S', // Sturenkadun toimipaikka
