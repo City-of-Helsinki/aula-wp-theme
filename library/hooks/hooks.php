@@ -558,7 +558,8 @@ add_filter( 'wp_head', function () {
 			<script
 				type="text/javascript"
 				id="wbc-widget-button"
-				src="https://coh-chat-app-prod.ow6i4n9pdzm.eu-de.codeengine.appdomain.cloud/get-widget-button?tenantId=sote-test&assistantId=apunappi&engagementId=apunappi">
+				class="wbc-widget-button-script"
+				src="https://coh-chat-app-prod.ow6i4n9pdzm.eu-de.codeengine.appdomain.cloud/get-widget-button?tenantId=sote-prod&assistantId=apunappi&engagementId=apunappi">
 			</script>
 			<?php
 		} else {
@@ -578,7 +579,8 @@ add_filter( 'wp_head', function () {
 			<script
 				type="text/javascript"
 				id="wbc-widget-button"
-				src="https://coh-chat-app-prod.ow6i4n9pdzm.eu-de.codeengine.appdomain.cloud/get-widget-button?tenantId=sote-test&assistantId=apunappi&engagementId=apunappi-toinen">
+				class="wbc-widget-button-script"
+				src="https://coh-chat-app-prod.ow6i4n9pdzm.eu-de.codeengine.appdomain.cloud/get-widget-button?tenantId=sote-prod&assistantId=apunappi&engagementId=apunappi-toinen">
 			</script>
 			<?php
 		} else {
