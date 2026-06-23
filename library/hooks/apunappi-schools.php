@@ -5,7 +5,7 @@
 namespace ApunappiSchools;
 
 /**
- * Checks if ammattikoulu or lukio matches the apunappi schools
+ * Main function to check if user from apunappi school
  *
  * @param $school_id
  *
@@ -14,7 +14,11 @@ namespace ApunappiSchools;
 function is_apunappi_school( $school_id ) {
 	$apunappi_schools = get_apunappi_schools_array();
 
-	return in_array( $school_id, $apunappi_schools );
+	if ( in_array( $school_id, $apunappi_schools ) || \OppiSchoolPicker\is_ala_aste( $school_id ) ) {
+		return true;
+	}
+
+	return false;
 }
 
 
