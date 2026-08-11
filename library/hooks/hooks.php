@@ -89,13 +89,6 @@ add_action(
 );
 
 /**
- * debug dev branch info
- */
-add_action('wp_footer', function () {
-	echo 'in dev branch...';
-});
-
-/**
  * Add scripts to footer
  *
  * @hook wp_head
