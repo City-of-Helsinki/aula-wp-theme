@@ -72,6 +72,9 @@ function get_apunappi_schools_array() {
 		'K2V', // Valuraudankujan toimipaikka
 		'K4V', // Vilppulantien toimipaikka
 		'K4X', // Vuokkiniemenkadun toimipaikka
+		'SAOKampus1', // StadinAO
+		'K1IL',
+		'K1ME',
 
 		// Lukio schools
 		'AlppL',  // Alppilan lukio
@@ -85,7 +88,8 @@ function get_apunappi_schools_array() {
 		'MäkeL',  // Mäkelänrinteen lukio
 		'RessL',  // Ressun lukio
 		'SibeL',  // Sibeliuslukio
-		'VuosL',   // Vuosaaren lukio
+		'VuosL',  // Vuosaaren lukio
+		'HelALu', // Konepajan aikuislukio
 
 		// peruskoulu schools
 		'JätkPK',      // Jätkäsaaren peruskoulu
