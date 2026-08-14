@@ -536,7 +536,7 @@ add_filter( 'login_display_language_dropdown', '__return_false' );
  */
 add_filter( 'wp_head', function () {
 
-	// show no chat if, not logged in OR is swe version in page
+	// show no chat if, not logged
 	if ( ! is_user_logged_in() ) {
 		return;
 	}
@@ -553,43 +553,26 @@ add_filter( 'wp_head', function () {
 	<?php
 
 	if ( \OppiSchoolPicker\is_peruskoulu( $school_abbrevation ) ) {
-		if ( ApunappiSchools\is_apunappi_school( $school_abbrevation ) ) {
-			?>
-			<script
-				type="text/javascript"
-				id="wbc-widget-button"
-				class="wbc-widget-button-script"
-				src="https://coh-chat-app-prod.ow6i4n9pdzm.eu-de.codeengine.appdomain.cloud/get-widget-button?tenantId=sote-prod&assistantId=apunappi&engagementId=apunappi">
-			</script>
-			<?php
-		} else {
-			?>
-			<script src="https://wds.ace.teliacompany.com/wds/instances/J5XKjqJt/ACEWebSDK.min.js"></script>
-			<a href="https://hel.humany.net/oppilashuolto-chat"></a>
-			<?php
-		}
+		?>
+		<script
+			type="text/javascript"
+			id="wbc-widget-button"
+			class="wbc-widget-button-script"
+			src="https://coh-chat-app-prod.ow6i4n9pdzm.eu-de.codeengine.appdomain.cloud/get-widget-button?tenantId=sote-prod&assistantId=apunappi&engagementId=apunappi">
+		</script>
+		<?php
 
 		return;
 	}
 
 	if ( \OppiSchoolPicker\is_lukio( $school_abbrevation ) || \OppiSchoolPicker\is_ammattikoulu( $school_abbrevation ) ) {
-		// Show or not apunappi chat script
-		if ( ApunappiSchools\is_apunappi_school( $school_abbrevation ) || ApunappiSchools\user_has_apunappi_department() ) {
-			?>
-			<script
-				type="text/javascript"
-				id="wbc-widget-button"
-				class="wbc-widget-button-script"
-				src="https://coh-chat-app-prod.ow6i4n9pdzm.eu-de.codeengine.appdomain.cloud/get-widget-button?tenantId=sote-prod&assistantId=apunappi&engagementId=apunappi-toinen">
-			</script>
-			<?php
-		} else {
-			?>
-			<!-- Shows wrong kind of chatbot, remove for now.
-			-->
-			<?php
-		}
 		?>
+		<script
+			type="text/javascript"
+			id="wbc-widget-button"
+			class="wbc-widget-button-script"
+			src="https://coh-chat-app-prod.ow6i4n9pdzm.eu-de.codeengine.appdomain.cloud/get-widget-button?tenantId=sote-prod&assistantId=apunappi&engagementId=apunappi-toinen">
+		</script>
 		<?php
 	}
 } );
