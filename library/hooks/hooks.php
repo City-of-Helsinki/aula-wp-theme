@@ -549,7 +549,7 @@ add_filter( 'wp_head', function () {
 	}
 
 	// Dont show for Sophie Mannerheimintie
-	if ( $school_abbrevation = 'SopSK' ) {
+	if ( $school_abbrevation === 'SopSK' ) {
 		return;
 	}
 
