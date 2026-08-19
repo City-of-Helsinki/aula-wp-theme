@@ -263,8 +263,7 @@ class Utils {
 			return $output;
 		}
 
-		// Get default user locale from WP profile settings
-		$user_locale = get_user_locale();
+		$user_locale = pll_current_language(); // user locale needs to be fi/sv/en so using pll_current_language
 
 		$user_school = esc_attr(Utils()->get_user_data_meta());
 
