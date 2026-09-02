@@ -24,6 +24,7 @@ class Oppiaste_checker {
 	 */
 	public function __construct() {
 		self::$current_user = wp_get_current_user();
+		// If no grade for user found, $user_grade is set to empty string: ''
         self::$user_grade = get_user_meta( self::$current_user->ID, self::$meta_key, true );
 	}
 
@@ -86,6 +87,10 @@ class Oppiaste_checker {
 	}
 
 	private static function get_oppiaste_options_key() {
+		if ( self::is_peruskoulu_default() ) {
+			return 'oppiaste_term_peruskoulu_default';
+		}
+
 		if ( self::is_peruskoulu_1() ) {
 			return 'oppiaste_term_peruskoulu_1';
 		}
@@ -126,6 +131,10 @@ class Oppiaste_checker {
 			return 'oppiaste_term_peruskoulu_10';
 		}
 
+		if ( self::is_lukio_default() ) {
+			return 'oppiaste_term_lukio_default';
+		}
+
 		if ( self::is_lukio_1() ) {
 			return 'oppiaste_term_lukio_1';
 		}
@@ -147,6 +156,26 @@ class Oppiaste_checker {
 		}
 
 		return 'oppiaste_term_default';
+	}
+
+	private static function is_peruskoulu_default() {
+		$oppiaste = self::get_oppiaste_value( self::$user_grade );
+
+		if ( null === $oppiaste && OppiSchoolPicker\is_peruskoulu( self::get_user_school_data() ) ) {
+			return true;
+		}
+
+		return false;
+	}
+
+	private static function is_lukio_default() {
+		$oppiaste = self::get_oppiaste_value( self::$user_grade );
+
+		if ( null === $oppiaste && OppiSchoolPicker\is_lukio( self::get_user_school_data() ) ) {
+			return true;
+		}
+
+		return false;
 	}
 
 	private static function is_peruskoulu_1() {

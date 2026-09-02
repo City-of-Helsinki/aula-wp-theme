@@ -3,6 +3,175 @@
     "title": "Aulan asetukset",
     "fields": [
         {
+            "key": "field_5d1dd21e0ca6c",
+            "label": "Palveluiden asetukset",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_5d1dd2350ca6d",
+            "label": "Palvelut (tulevat poistumaan)",
+            "name": "oppijaportaali_services",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Lisää palvelu",
+            "sub_fields": [
+                {
+                    "key": "field_5f68699d7e1de",
+                    "label": "Palvelun nimi",
+                    "name": "title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33.3333333333",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "parent_repeater": "field_5d1dd2350ca6d"
+                },
+                {
+                    "key": "field_5f76ee7f341fc",
+                    "label": "Palvelun nimi (swe)",
+                    "name": "title_sv",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Voit asettaa valinnaisen ruotsinkielisen nimen tässä.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33.3333333333",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "parent_repeater": "field_5d1dd2350ca6d"
+                },
+                {
+                    "key": "field_5f76ee8e341fd",
+                    "label": "Palvelun nimi (eng)",
+                    "name": "title_en",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Voit asettaa valinnaisen englanninkielisen nimen tässä.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33.3333333333",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "parent_repeater": "field_5d1dd2350ca6d"
+                },
+                {
+                    "key": "field_5f686a137e1df",
+                    "label": "Palvelun URL",
+                    "name": "url",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33.3333333333",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "parent_repeater": "field_5d1dd2350ca6d"
+                },
+                {
+                    "key": "field_5f686a257e1e0",
+                    "label": "Palvelun ikoni",
+                    "name": "icon",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33.3333333333",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "parent_repeater": "field_5d1dd2350ca6d"
+                },
+                {
+                    "key": "field_5f69ccfecf98a",
+                    "label": "Aseta oletuksena näkyviin",
+                    "name": "is_default",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33.3333333333",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": "",
+                    "parent_repeater": "field_5d1dd2350ca6d"
+                }
+            ],
+            "rows_per_page": 20
+        },
+        {
             "key": "field_5f7c3c3ec8906",
             "label": "Random nuotti linkki",
             "name": "",
@@ -253,7 +422,9 @@
             "ui": 0,
             "return_format": "value",
             "ajax": 0,
-            "placeholder": ""
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
         },
         {
             "key": "field_6082c1720dfbf",
@@ -359,7 +530,9 @@
             "ui": 0,
             "return_format": "value",
             "ajax": 0,
-            "placeholder": ""
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
         },
         {
             "key": "field_6082c206bed02",
@@ -377,7 +550,8 @@
             },
             "display_format": "d\/m\/Y",
             "return_format": "Y-m-d",
-            "first_day": 1
+            "first_day": 1,
+            "default_to_current_date": 0
         },
         {
             "key": "field_6082c265bed04",
@@ -412,7 +586,8 @@
             },
             "display_format": "d\/m\/Y",
             "return_format": "Y-m-d",
-            "first_day": 1
+            "first_day": 1,
+            "default_to_current_date": 0
         },
         {
             "key": "field_6082c298bed05",
@@ -486,6 +661,32 @@
             "placement": "top",
             "endpoint": 0,
             "selected": 0
+        },
+        {
+            "key": "field_6a983629a5e5d",
+            "label": "Peruskoulu oletus (käytössä jos grade ei määritetty)",
+            "name": "oppiaste_term_peruskoulu_default",
+            "aria-label": "",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "service-oppiaste",
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "field_type": "select",
+            "allow_null": 0,
+            "allow_in_bindings": 1,
+            "bidirectional": 0,
+            "multiple": 0,
+            "bidirectional_target": []
         },
         {
             "key": "field_60c477d1719ac",
@@ -728,6 +929,32 @@
             "bidirectional_target": []
         },
         {
+            "key": "field_6a9838c95f543",
+            "label": "Lukio oletus",
+            "name": "oppiaste_term_lukio_default",
+            "aria-label": "",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "service-oppiaste",
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "field_type": "select",
+            "allow_null": 0,
+            "allow_in_bindings": 1,
+            "bidirectional": 0,
+            "multiple": 0,
+            "bidirectional_target": []
+        },
+        {
             "key": "field_60c47856521ed",
             "label": "Lukio 1.luokka kategoria",
             "name": "oppiaste_term_lukio_1",
@@ -952,5 +1179,8 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1738327104
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1788360939
 }
