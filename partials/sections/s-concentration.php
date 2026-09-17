@@ -7,13 +7,7 @@ $query_args = [
 	'orderby'        => 'meta_value_num',
 	'meta_key'       => 'concentration_duration',
 	'order'          => 'ASC',
-	'posts_per_page' => - 1,
-	'tax_query'      => [
-		[
-			'taxonomy' => 'service-oppiaste',
-			'terms'    => $oppiaste_checker::get_oppiaste_options_term_value(),
-		],
-	],
+	'posts_per_page' => 10, // set limit
 ];
 
 $query = new WP_Query( $query_args );
