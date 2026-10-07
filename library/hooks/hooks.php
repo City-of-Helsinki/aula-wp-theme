@@ -554,10 +554,10 @@ add_filter( 'wp_head', function () {
 	}
 
 	// Use different tenant id based on env
-	$tenant_id = 'sote-test';
+	$tenant_id = 'sote-prod';
 
-	if ( wp_get_environment_type() === 'production' ) {
-		$tenant_id = 'sote-prod';
+	if ( wp_get_environment_type() === 'development' ) {
+		$tenant_id = 'sote-test';
 	}
 
 	?>
